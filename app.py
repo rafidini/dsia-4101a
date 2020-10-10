@@ -9,9 +9,9 @@ from dash.dependencies import Input, Output
 
 # Imports de fichiers en local
 from src.navigation_bar import navigationBar
-from src.obesity_page import pageObesity, graph_map_obesity, graph_bar_obesity, dropdown_countries, dropdown_continents, graph_line_obesity_group, graph_pie_obesity_group
+from src.obesity_page import pageObesity, graph_map_obesity, graph_bar_obesity, dropdown_countries, dropdown_continents, graph_line_obesity_group, graph_pie_obesity_group, rank_obesity_group
 from src.employment_page import pageEmployment
-from src.analytics_page import pageAnalytics
+from src.analytics_page import pageAnalytics, graph_obesity_employment_analytics
 
 # Application: Dashboard
 if __name__ == '__main__':
@@ -94,16 +94,32 @@ if __name__ == '__main__':
     def create_graph_group(interval, group_type, location):
         return graph_line_obesity_group(interval[0], interval[1], group_type, location)
 
-    # Interactivite: Indicateur des annees pour le slider
+    # Interactivite: Creation du graphique camembert, du classement par rapport au slider des annees
     @app.callback(
         [dash.dependencies.Output("label-obesity-miscellaneous", "children"),
-        dash.dependencies.Output("piechart-obesity-miscellaneous", "figure")],
+        dash.dependencies.Output("piechart-obesity-miscellaneous", "figure"),
+        dash.dependencies.Output("ranking-obesity-miscellaneous", "children"),
+        dash.dependencies.Output("ranking-text-obesity-miscellaneous", "children")],
         [dash.dependencies.Input("slider-obesity-miscellaneous-graph", "value"),
         dash.dependencies.Input('radioitems-obesity-group', 'value'),
         dash.dependencies.Input('dropdown-obesity-group-location', 'value')]
     )
     def change_slider(value, group_type, location):
-        return "During the year {}".format(value), graph_pie_obesity_group(value, group_type, location)
+        # For the rank widget
+        rank, n = rank_obesity_group(value, group_type, location)
+        ranktxt =  "\n among " + ("countries" if group_type == "Countries" else "continents")
+
+        return "During the year {}".format(value), graph_pie_obesity_group(value, group_type, location), "{}/{}".format(rank, n), ranktxt
+
+    # Interactivite: Creation du graphique lineplot, de la correlation de l'obesite par rapport aux activites
+    # bureautiques ou manuelles
+    @app.callback(
+        [dash.dependencies.Output("graph-lineplot-correlationD-analytics", "figure"),
+        dash.dependencies.Output("graph-lineplot-correlationM-analytics", "figure")],
+        dash.dependencies.Input("dropdown-country-analytics", "value")
+    )
+    def change_country(country):
+        return graph_obesity_employment_analytics(country, "D"), graph_obesity_employment_analytics(country, "M")
 
     # Titre de l'application
     app.title = "Dashboard"

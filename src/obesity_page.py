@@ -22,7 +22,7 @@ with open(countriesPath) as f:
 # Traitement des donnees
 obesity = process_obesity(obesity)
 
-# Fonctions pour les graphiques
+# Fonctions pour la page
 def graph_map_obesity(year):
     """
     Retourne une carte representant le pourentage d'obesite pour
@@ -145,11 +145,27 @@ def graph_line_obesity_group(pMinYear, pMaxYear, pGroupType, pLocation):
     # Creation du graphique
     try:
         lineplot = px.line(
-            df,
+            df.replace({"sex":{"M":"Male", "F":"Female"}}),
             x="year",
             y="obesity",
             color="sex"
         )
+
+        # Modification d'elements du graphique
+        lineplot.update_layout(
+            title="Evolution of obesity percentage by sex",
+            legend_title="",
+            margin=dict(l=4, r=4, t=40, b=4),
+            paper_bgcolor='rgba(48,48,48,1)',
+            plot_bgcolor='rgba(48,48,48,1)',
+            font=dict(
+                size=12,
+                color="white"
+            ),
+            xaxis=dict(title="Year"),
+            yaxis=dict(title="Obesity (%)")
+        )
+
 
         return lineplot
     except:
@@ -202,9 +218,26 @@ def graph_pie_obesity_group(year, pGroupType, pLocation):
         go.Pie(
             labels=labels,
             values=values,
-            pull=[0.4, 0]
-        )
+            pull=[0.25, 0],
+        ),
     ])
+
+    # Modification d'elements du graphique
+    pie_chart.update_layout(
+        title="Percentage of obesity in population",
+        legend_title="",
+        margin=dict(l=4, r=4, t=40, b=4),
+        paper_bgcolor='rgba(48,48,48,1)',
+        plot_bgcolor='rgba(48,48,48,1)',
+        font=dict(
+            size=12,
+            color="white"
+        ),
+    )
+
+    pie_chart.update_traces(
+        textposition='outside',
+    )
 
     return pie_chart
 
@@ -220,69 +253,49 @@ def rank_obesity_group(year, pGroupType, pLocation):
 
     rank, n = None, None
 
-    # Cas d'un pays
-    if pGroupType == "Countries":
-        continent = get_continent_from_country(pLocation)
+    # Pre-selection
+    obesitySelect = obesity.query('year == {} and sex == "B"'.format(year))
 
-        # Pre-selection
-        obesitySelect = obesity.query('year == {} and sex == "B" and continent == "{}"'.format(year, continent))
+    # Tri des donnees
+    obesitySelectSorted = obesitySelect.sort_values(by="obesity").copy()
 
-        # Tri des donnees
-        obesitySelectSorted = obesitySelect.sort_values(by="obesity").copy()
-
-        # Reset l'index
-        new_index = np.arange(1, obesitySelectSorted.shape[0] + 1) 
-        obesitySelectSorted = obesitySelectSorted.set_index(new_index)
-
-        # Recupere le rang
-        n = obesitySelectSorted.index[obesitySelectSorted['country'] == country].tolist()
-
-    # Cas d'un continent
-    else:
-        # Pre-selection
-        obesitySelect = obesity.query("year == {} and sex == '{}'".format(year, 'B'))
-
-        # Regroupement
+    # Regroupement pour les continents
+    if pGroupType == "Continents":
         obesitySelect = obesitySelect.groupby("continent").mean()
 
-        # Tri des donnees
-        obesitySelectSorted = obesitySelect.sort_values(by="obesity").copy()
-
-        # Reset l'index
-        new_index = np.arange(1, obesitySelectSorted.shape[0] + 1) 
+    # Reset l'index
+    new_index = np.arange(1, obesitySelectSorted.shape[0] + 1)
+    if pGroupType == "Countries":
+        obesitySelectSorted = obesitySelectSorted.set_index(new_index)
+    else:
         obesitySelectSorted = obesitySelectSorted[['obesity']].reset_index(level='continent').set_index(new_index)
 
+    try:
         # Recupere le rang
-        n = obesitySelectSorted.index[obesitySelectSorted['continent'] == continent].tolist()
+        rank = obesitySelectSorted.index[obesitySelectSorted['country' if pGroupType == "Countries" else 'continent'] == pLocation].tolist()
+        n = new_index.max()
 
+        return rank[0], n
 
-    rank = new_index.max()
+    except:
+        return None, None
 
-    return rank, n
+def generate_dropdown(dataframe, feature):
+    dropdown = list()
 
-def get_continent_from_country(country):
-    """
-    Retourne le continent associe au nom du pays passe en parametre.
-    """
+    for element in dataframe[feature].unique():
+        dropdown.append({'label': element, 'value':element})
 
-    df = obesity.query('country == "{}"'.format(country))
-    continents = df.continent.unique()
-    
-    if len(continents) == 0: return None
-    
-    return continents[0]
+    return dropdown
 
 # Variables pour les elements de la page
 minYear = obesity.year.min()
 maxYear = obesity.year.max()
-countries = obesity.country.unique()
-continents = obesity.continent.unique()
+dropdown_continents = generate_dropdown(obesity, 'continent')
+dropdown_countries = generate_dropdown(obesity, 'country')
 
-dropdown_continents = list()
-for continent in continents: dropdown_continents.append({'label': continent, 'value':continent})
-
-dropdown_countries = list()
-for country in countries: dropdown_countries.append({'label': country, 'value': country})
+#for continent in continents: dropdown_continents.append({'label': continent, 'value':continent})
+#for country in countries: dropdown_countries.append({'label': country, 'value': country})
 
 # Selection du type de groupe
 radioitems = dbc.FormGroup(
@@ -291,7 +304,7 @@ radioitems = dbc.FormGroup(
         dbc.RadioItems(
             options=[
                 {"label": "Country", "value": "Countries"},
-                {"label": "Continent", "value": "Countinents"},
+                {"label": "Continent", "value": "Continents"},
             ],
             value="Countries",
             id="radioitems-obesity-group",
@@ -346,6 +359,7 @@ pageObesity = html.Div([
                 clearable=True,
                 style={"color":"black"}
             ),
+            html.Br(),
 
             # Confirmation de requête
             html.Br(),
@@ -392,7 +406,14 @@ pageObesity = html.Div([
 
                                 # Zone des graphiques
                                 dbc.CardBody([
-                                    dcc.Graph(id="piechart-obesity-miscellaneous", style={"height":260}),
+                                    dcc.Graph(id="piechart-obesity-miscellaneous", style={"height":260, "padding":0}),
+
+                                    html.Div(
+                                        html.H1([
+                                            dbc.Badge(id="ranking-obesity-miscellaneous", className="ml-1", color="secondary"),
+                                            html.P(id="ranking-text-obesity-miscellaneous")],
+                                        style={"text-align":"center", "padding-top":260* 2/6})
+                                    , style={"height":260})
                                 ]),
 
                                 # Pied de page des graphiques
@@ -412,6 +433,7 @@ pageObesity = html.Div([
                                     )
                                 ]),
                             ], color="dark", outline=True),
+
                         ], style={"flex":2, "padding-left":5})
 
                     ], style = {"display":"flex"}),
@@ -436,7 +458,6 @@ pageObesity = html.Div([
 
             # Graphique: Distribution obesite
             html.Div([dcc.Graph(id='graph-bar-obesity')], style = {}),
-
         ],
         style = {"flex":2, "display": "flex", "flex-direction": "column"},
     ),],
