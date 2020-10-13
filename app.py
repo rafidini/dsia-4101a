@@ -11,7 +11,7 @@ from dash.dependencies import Input, Output
 from src.navigation_bar import navigationBar
 from src.obesity_page import pageObesity, graph_map_obesity, graph_bar_obesity, dropdown_countries, dropdown_continents, graph_line_obesity_group, graph_pie_obesity_group, rank_obesity_group
 from src.employment_page import pageEmployment
-from src.analytics_page import pageAnalytics, graph_obesity_employment_analytics
+from src.analytics_page import pageAnalytics, graph_obesity_employment_analytics, correlation_alert_component_analytics, correlation_obesity_employment_analytics, lineplot_graph, heatmap_graph, country_selection
 
 # Application: Dashboard
 if __name__ == '__main__':
@@ -45,7 +45,7 @@ if __name__ == '__main__':
         else:
             return pageObesity
     
-    # Interactivite: Changement d'annee sur la page 'obesity'
+    # OBESITY - Interactivite: Changement d'annee sur la page 'obesity'
     @app.callback(
         [dash.dependencies.Output('graph-bar-obesity', 'figure'),
         dash.dependencies.Output('graph-map-obesity', 'figure')],
@@ -54,15 +54,16 @@ if __name__ == '__main__':
     def change_year(year):
         return [graph_bar_obesity(year), graph_map_obesity(year)]
 
-    # Interactivite: Choix de groupe/region
+    # OBESITY - Interactivite: Choix de groupe/region
     @app.callback(
-        [dash.dependencies.Output('dropdown-obesity-group-location', 'options')],
+        [dash.dependencies.Output('dropdown-obesity-group-location', 'options'),
+        dash.dependencies.Output('dropdown-obesity-group-location', 'value')],
         [dash.dependencies.Input('radioitems-obesity-group', 'value')]
     )
     def group_input(group_type):
-        return [dropdown_countries] if group_type == "Countries" else [dropdown_continents]
+        return [dropdown_countries, "France"] if group_type == "Countries" else [dropdown_continents, "Europe"]
 
-    # Interactivite: Ouverture fenetre pour region specifique
+    # OBESITY - Interactivite: Ouverture fenetre pour region specifique
     @app.callback(
         [dash.dependencies.Output("modal-obesity-group", "is_open"),
         dash.dependencies.Output("header-obesity-group", "children")],
@@ -76,7 +77,7 @@ if __name__ == '__main__':
             return not is_open, location
         return is_open, None
 
-    # Interactivite: Indicateur des annees pour le range slider
+    # OBESITY - Interactivite: Indicateur des annees pour le range slider
     @app.callback(
         dash.dependencies.Output("label-obesity-group-graph", "children"),
         dash.dependencies.Input("slider-obesity-group-graph", "value")
@@ -84,7 +85,7 @@ if __name__ == '__main__':
     def change_range_slider(values):
         return "From {} to {}:".format(values[0], values[1])
 
-    # Interactivite: Creation du graphique pour une region specifique
+    # OBESITY - Interactivite: Creation du graphique pour une region specifique
     @app.callback(
         dash.dependencies.Output("lineplot-obesity-graph", "figure"),
         [dash.dependencies.Input('slider-obesity-group-graph', "value"),
@@ -94,7 +95,7 @@ if __name__ == '__main__':
     def create_graph_group(interval, group_type, location):
         return graph_line_obesity_group(interval[0], interval[1], group_type, location)
 
-    # Interactivite: Creation du graphique camembert, du classement par rapport au slider des annees
+    # OBESITY - Interactivite: Creation du graphique camembert, du classement par rapport au slider des annees
     @app.callback(
         [dash.dependencies.Output("label-obesity-miscellaneous", "children"),
         dash.dependencies.Output("piechart-obesity-miscellaneous", "figure"),
@@ -111,15 +112,34 @@ if __name__ == '__main__':
 
         return "During the year {}".format(value), graph_pie_obesity_group(value, group_type, location), "{}/{}".format(rank, n), ranktxt
 
-    # Interactivite: Creation du graphique lineplot, de la correlation de l'obesite par rapport aux activites
+    # ANALYTICS - Interactivite: Creation du graphique lineplot, de la correlation de l'obesite par rapport aux activites
     # bureautiques ou manuelles
     @app.callback(
         [dash.dependencies.Output("graph-lineplot-correlationD-analytics", "figure"),
-        dash.dependencies.Output("graph-lineplot-correlationM-analytics", "figure")],
-        dash.dependencies.Input("dropdown-country-analytics", "value")
+        dash.dependencies.Output("graph-lineplot-correlationM-analytics", "figure"),
+        dash.dependencies.Output("alert-correlationD-analytics", "children"),
+        dash.dependencies.Output("alert-correlationM-analytics", "children")],
+        [dash.dependencies.Input("dropdown-country-analytics", "value"),
+        dash.dependencies.Input("radio-corr-type-analytics", "value")]
     )
-    def change_country(country):
-        return graph_obesity_employment_analytics(country, "D"), graph_obesity_employment_analytics(country, "M")
+    def change_country(country, corrtype):
+        corrD = correlation_obesity_employment_analytics(country, "D", corrtype)
+        corrM = correlation_obesity_employment_analytics(country, "M", corrtype)
+        return (graph_obesity_employment_analytics(country, "D", corrtype),
+        graph_obesity_employment_analytics(country, "M", corrtype),
+        correlation_alert_component_analytics(country, "D", corrD, corrtype),
+        correlation_alert_component_analytics(country, "M", corrM, corrtype))
+
+    # ANALYTICS - Interactivite: Changement du type de graphique ('lineplot', 'heatmap'), apparition 
+    # de la selection de pays seulement lorsque le type de visualisation est le 'lineplot'.
+    @app.callback(
+        [dash.dependencies.Output("graphs-analytics", "children"),
+        dash.dependencies.Output("ui-dropdown-country-analytics", "children")],
+        [dash.dependencies.Input("radio-graph-type-analytics", "value"),
+        dash.dependencies.Input("radio-corr-type-analytics", "value")]
+    )
+    def change_graph_type(gtype, corrtype):
+        return (heatmap_graph, None) if gtype == "heatmap" else (lineplot_graph, country_selection)
 
     # Titre de l'application
     app.title = "Dashboard"

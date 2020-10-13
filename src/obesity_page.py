@@ -261,7 +261,7 @@ def rank_obesity_group(year, pGroupType, pLocation):
 
     # Regroupement pour les continents
     if pGroupType == "Continents":
-        obesitySelect = obesitySelect.groupby("continent").mean()
+        obesitySelectSorted = obesitySelectSorted.groupby("continent").mean()
 
     # Reset l'index
     new_index = np.arange(1, obesitySelectSorted.shape[0] + 1)
@@ -287,6 +287,9 @@ def generate_dropdown(dataframe, feature):
         dropdown.append({'label': element, 'value':element})
 
     return dropdown
+
+
+#print(rank_obesity_group(1975, "Continents", "Europe"))
 
 # Variables pour les elements de la page
 minYear = obesity.year.min()
@@ -323,6 +326,7 @@ pageObesity = html.Div([
 
             # Break
             html.Br(),
+            html.Hr(style={"background-color":"white"}),
 
             # Titre 2
             html.H5("Year"),
@@ -342,9 +346,8 @@ pageObesity = html.Div([
                 ),
             ]),
 
-            # Double saut de ligne/ Separation
-            html.Br(),
-            html.Br(),
+            # Separation
+            html.Hr(style={"background-color":"white"}),
 
             # Titre 3
             html.H5("Group"),
@@ -356,13 +359,14 @@ pageObesity = html.Div([
             html.Li([dbc.Label(["Select a specific location"])]),
             dcc.Dropdown(
                 id='dropdown-obesity-group-location',
-                clearable=True,
+                clearable=False,
                 style={"color":"black"}
             ),
             html.Br(),
+            html.Hr(style={"background-color":"white"}),
 
             # Confirmation de requête
-            html.Br(),
+            html.H5("Confirm"),
             html.Li([dbc.Label(["Press the button to confirm"])]),
             dbc.Button("Submit", id="button-obesity-group", color="light", outline=True, className="mr-1"),
 
