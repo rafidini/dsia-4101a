@@ -16,6 +16,10 @@ employment = pd.read_csv(employmentPath)
 # Traitement des donnees
 employment = process_employment(employment)
 
+# Fonctions pour la page
+
+# Variables pour la page
+
 # Page pour l'emploi
 pageEmployment = html.Div([
     html.H1("Employment")
