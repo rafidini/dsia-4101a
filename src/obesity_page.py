@@ -39,7 +39,7 @@ def graph_map_obesity(year):
         locations = "country_code",
         color = "obesity",
         color_continuous_scale="Brwnyl",
-        range_color=(df.obesity.min(), df.obesity.max()),
+        range_color=(obesity.obesity.min(), obesity.obesity.max()),
         mapbox_style = 'carto-darkmatter',
         center = {"lat": 33.0902, "lon": -35.7129},
         zoom = 1,
@@ -77,8 +77,8 @@ def graph_bar_obesity(year):
     hist, bins = np.histogram(
         df.obesity,
         bins = np.arange(
-            df.obesity.min(),
-            df.obesity.max()+step,
+            obesity.obesity.min(),
+            obesity.obesity.max()+step,
             step
         )
     )
@@ -359,7 +359,7 @@ pageObesity = html.Div([
             html.Li([dbc.Label(["Select a specific location"])]),
             dcc.Dropdown(
                 id='dropdown-obesity-group-location',
-                clearable=False,
+                clearable=True,
                 style={"color":"black"}
             ),
             html.Br(),

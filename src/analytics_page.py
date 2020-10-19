@@ -154,8 +154,10 @@ def heatmap_obesity_employment_analytics(corr_type="Pearson"):
     Retourne une carte de chaleur selon les correlation entre
     obesite et les emplois bureautiques et manuels.
     """
+    data = create_table_correlation_country_activity(corr_type).transpose()
+
     heatmap = px.imshow(
-        create_table_correlation_country_activity(corr_type).transpose(),
+        data,
         color_continuous_scale="RdBu",
         height=700
     )
@@ -199,7 +201,6 @@ lineplot_graph = dbc.Row([
         width=6
     )
 ])
-heatmap_graph = dcc.Graph(figure=heatmap_obesity_employment_analytics())
 country_selection = [
     # Titre pays a selectionner
     html.Li([html.H6("Country:")]),

@@ -11,7 +11,7 @@ from dash.dependencies import Input, Output
 from src.navigation_bar import navigationBar
 from src.obesity_page import pageObesity, graph_map_obesity, graph_bar_obesity, dropdown_countries, dropdown_continents, graph_line_obesity_group, graph_pie_obesity_group, rank_obesity_group
 from src.employment_page import pageEmployment
-from src.analytics_page import pageAnalytics, graph_obesity_employment_analytics, correlation_alert_component_analytics, correlation_obesity_employment_analytics, lineplot_graph, heatmap_graph, country_selection
+from src.analytics_page import pageAnalytics, graph_obesity_employment_analytics, correlation_alert_component_analytics, correlation_obesity_employment_analytics, lineplot_graph, country_selection, heatmap_obesity_employment_analytics
 
 # Application: Dashboard
 if __name__ == '__main__':
@@ -75,7 +75,17 @@ if __name__ == '__main__':
     def open_modal(n1, n2, location, is_open):
         if n1 or n2:
             return not is_open, location
+
         return is_open, None
+
+
+    # OBESITY - Interactivite: Ouverture fenetre pour region specifique bis
+    @app.callback(
+        dash.dependencies.Output("button-obesity-group", "n_clicks"),
+        dash.dependencies.Input("close-modal-obesity-group", "n_clicks"),
+    )
+    def reset_button_submit(n_clicks_close):
+        return None
 
     # OBESITY - Interactivite: Indicateur des annees pour le range slider
     @app.callback(
@@ -139,7 +149,10 @@ if __name__ == '__main__':
         dash.dependencies.Input("radio-corr-type-analytics", "value")]
     )
     def change_graph_type(gtype, corrtype):
-        return (heatmap_graph, None) if gtype == "heatmap" else (lineplot_graph, country_selection)
+
+        heatmap = dcc.Graph(figure=heatmap_obesity_employment_analytics(corrtype))
+
+        return (heatmap, None) if gtype == "heatmap" else (lineplot_graph, country_selection)
 
     # Titre de l'application
     app.title = "Dashboard"
