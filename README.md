@@ -1,7 +1,8 @@
 # Introduction
 
+![ESIEE Paris](https://upload.wikimedia.org/wikipedia/fr/7/71/Logo_ESIEE_Paris.svg)
 ![Python](https://upload.wikimedia.org/wikipedia/commons/f/f8/Python_logo_and_wordmark.svg)
-> source: [ici](https://upload.wikimedia.org/wikipedia/commons/f/f8/Python_logo_and_wordmark.svg)
+> sources: [python](https://upload.wikimedia.org/wikipedia/commons/f/f8/Python_logo_and_wordmark.svg), [ESIEE Paris](https://upload.wikimedia.org/wikipedia/fr/7/71/Logo_ESIEE_Paris.svg)
 
 Dans le cadre du module "*Python pour la datascience*" (**DSIA-4101A**), nous avons eu l'opportunité de créer un dashboard liant les compétences acquises grâce ce module avec notre créativité. Le projet se réalisa en binôme et l'objectif fut de fournir une représentation intéractive (dashboard) d'un jeu de données accessibles publiquement et non modifiées.  
 
@@ -22,15 +23,20 @@ Et nos jeux de données sont:
 Alors notre binôme s'est demandé: <ins>*Existe t'il un lien entre l'obesité et les emplois bureautiques <sup>et</sup>/<sub>ou</sub> manuels?*</ins>
 
 <br>
-<br>
+
+___
 
 # Table des matières
 
-## I. Guide utilisateur
+[TOC]
+___
 
-### 1. Installation
 
-#### A. Python (3.X.X)
+# I. Guide utilisateur
+
+## 1. Installation
+
+### A. Python (3.X.X)
 Dans un premier temps, afin d'utiliser notre projet il faudra posséder ***Python v3.X.X*** sur votre appareil. Pour cela, que votre appareil soit sous Linux, macOS, Windows ou autre, rendez vous la page de téléchargement de Python en cliquant [ici](https://www.python.org/downloads/). Puis suivez les instructions lors de l'installation.
 
 Après l'installation, vérifiez que ***Python v3.X.X*** est bien installé sur votre appareil en tapant les commandes suivantes sur le Terminal, Invité de commandes, PowerShell ou autre selon votre système d'exploitation:
@@ -52,9 +58,13 @@ Python 2.X.X
 ```
 Alors reinstallez une version 3.X.X de Python.
 
-#### B. Windows
+### B. Le dashboard
 
-#### C. Linux & macOS
+## 2. Exécution
+
+### A. Windows
+
+### B. Linux & macOS
 Lancez un terminal/invité de commandes/console au niveau du projet:
 ```bash
 $ cd [Le chemin menant au dossier]/Projet
@@ -84,15 +94,82 @@ Dash is running on http://127.0.0.1:8050/
  * Debug mode: on
 ```
 
-### 2. Utilisation
+## 3. Utilisation
 
-## II. Guide développeur
+### A. Bar de navigation
 
-## III. Rapport d'analyse
+![navigation_bar.png](images/utilisation/navigation_bar.png)
 
-### 1. Les données
+Pour d'accéder aux différentes pages proposées par l'application il y a la bar de navigation (ci-dessus). L'application propose 3 pages:
+- *Obesity*
+- *Employment*
+- *Analytics*
+Tous sont accessibles en cliquant sur le label correspondant à la page à droite de la bar de navigation.
 
-#### A. Obesity among adults by country, 1975-2016
+### B. Page *Obesity*
+
+Lorsque l'installation et l'éxecution ont bien été respéctés alors on se retrouve sur la page suivante:  
+
+![page_obesity_main.png](images/utilisation/page_obesity_main.png)
+
+Sur cette page, *Obesity*,  on utilise le jeu de données *Obesity among adults by country, 1975-2016*.
+
+- #### Fenêtre principale
+
+![page_obesity_main_interaction.gif](images/utilisation/page_obesity_main_interaction.gif)
+
+La page permet d'intéragir avec la carte du monde et l'histogramme situés du côté droit de la page à partir du "*slider*" situé en haut à gauche afin de défiler les années. Cela permet de voir la progression du pourcentage d'obesité sur une représentation géolocalisée et la distribution de celle-ci au cours des années. 
+
+- #### Fenêtre secondaire
+
+La fenêtre secondaire est une fenêtre sur laquelle on peut avoir plus d'information sur une région spécifique, c'est-à-dire un pays ou un continent. Celle-ci apparaît lorsque que l'on appuie sur le bouton "*Submit*" après avoir choisi la région ou lorsque l'on change de pays/continent. Voici deux examples:
+
+![page_obesity_open_country.gif](images/utilisation/page_obesity_open_country.gif)
+> Apparition de la fenêtre secondaire pour un pays spécifique
+
+<br>
+
+![page_obesity_open_continent.gif](images/utilisation/page_obesity_open_continent.gif) 
+> Apparition de la fenêtre secondaire pour un continent spécifique
+
+<br>
+
+**Mais ducoup qu'est-ce que l'on peut faire sur cette fenêtre secondaire?**
+- Changer l'intervalle pour intérargir avec le graphique représentant l'évolution du pourcentage d'obésité par sex.
+
+![page_obesity_secondary_lineplot.gif](images/utilisation/page_obesity_secondary_lineplot.gif)
+
+- Changer l'année pour intéragir avec:
+  - Le camembert représentant le part de personnes obèses et non obèses au sein de la région.
+  - Le rang de la région par rapport aux autres (*ex: un pays sera comparé à tout les autres pays du monde, un continent sera comparé aux autres continents*). Ce rang est définit tel que plus le rang est petit, plus faible est le pourcentage d'obésité et réciproquement plus le rang est grand, plus élevé est le pourcentage d'obésité.
+
+![page_obesity_secondary_piechart.gif](images/utilisation/page_obesity_secondary_piechart.gif)
+
+Et bien sûr pour quitter la fenêtre secondaire il suffit de cliquer sur le bouton rouge "<span style="color:red"><b>Close</b></span>".
+
+### C. Page *Employment*
+
+### D. Page *Analytics*
+
+![page_analytics_main.png](images/utilisation/page_analytics_main.png)
+
+Sur cette page, *Analytics*, on utilise les deux jeux de données combinés en un seul et on utilisera 2 types de graphiques pour 3 types de correlation différentes.
+
+- #### Correlation par pays
+
+![page_analytics_lineplot_interaction.gif](images/utilisation/page_analytics_lineplot_interaction.gif)
+
+- #### "Carte de chaleur"
+
+![page_analytics_heatmap_interaction.gif](images/utilisation/page_analytics_heatmap_interaction.gif)
+
+# II. Guide développeur
+
+# III. Rapport d'analyse
+
+## 1. Les données
+
+### A. Obesity among adults by country, 1975-2016
 
 Ce jeu de données provient de *[Kaggle](https://www.kaggle.com/amanarora/obesity-among-adults-by-country-19752016)*, une communauté regroupant des outils et des ressources pour la data science, précisément celui-ci a été modifié par l'utilisateur *[Aman Arora](https://www.kaggle.com/amanarora)* à partir des données originales se trouvant [ici](https://apps.who.int/gho/data/node.main.A900A?lang=en) sur le site l'*Organisation Mondiale de la Santé (OMS)*.
   
@@ -120,7 +197,7 @@ Voici la structure du jeu de données post-traitement:
 
 <br>
 
-#### B. Employment by activities (ISIC Rev.4)
+### B. Employment by activities (ISIC Rev.4)
 
 Ce jeu de données provient de *[OECD (Organisation for Economic Co-operation and Development)](https://stats.oecd.org/Index.aspx?QueryId=3491)*, une organisation économique intergouvernementale composée de 37 pays fondée en 1961 (*Wikipedia*) dans le but de stimuler la progression économique et les échanges.
   
@@ -168,13 +245,13 @@ Voici la structure du jeu de données post-traitement:
 
 <br>
 
-### 2. Observations
+## 2. Observations
 
 Maintenant analysons les jeux de données sur l'obésité et l'emploi afin de répondre à notre problématique.
 
-#### A. Obesity among adults by country, 1975-2016 
+### A. Obesity among adults by country, 1975-2016 
 
-- ##### Cartographie & Distribution
+- #### Cartographie & Distribution
 
 | 1975 | 1996 | 2016 |
 |:-----------:|:-----------:|:-----------:|
@@ -186,7 +263,7 @@ Maintenant analysons les jeux de données sur l'obésité et l'emploi afin de r�
   - Les **pays les plus développées/riches** et les **pays en voie de développement** possèdent une croissance un peu plus élevée du pourcentage d'obésité.
   - Un pays a réussi à avoir une majorité de sa population en obésité (*Nauru*).
 
-- ##### Analyse spacio-temporelle
+- #### Analyse spacio-temporelle
 
 <ins>Selon les continents:</ins>
   
@@ -218,24 +295,24 @@ Maintenant analysons les jeux de données sur l'obésité et l'emploi afin de r�
 - <ins>Critiques:</ins>
   - On retouve ici le même problème que le graphique précédent puisqu'on n'utilise pas le coefficient de la population pour le calcul de la moyenne d'obésité.
 
-- ##### Bilan
+- #### Bilan
 
 A partir de toutes ces observations on peut conclure que l'obésité est une maladie qui touche le monde entier cependant certains sont plus touchés que d'autres, notamment les pays riches et  les plus développés à quelques exceptions près. En plus de cela, les femmes sont plus touchées que les hommes par cette maladie en général cependant on observe une transition de cette tendance en Europe. Malheureusement **l'obésité peut être décrite comme une fonction croissante par rapport au temps**, c'est-à-dire que le pourcentage de personnes obèses ne fait qu'augmenter.
 
-#### B. Employment by activities (ISIC Rev.4)
+### B. Employment by activities (ISIC Rev.4)
 
-- ##### Analyse spacio-temporelle
-- ##### Bilan
+- #### Analyse spacio-temporelle
+- #### Bilan
 
-#### C. Comparaison des jeux de données
+### C. Comparaison des jeux de données
 
 Nos deux jeux de données nous ont appris beaucoup de choses, cependant il serait intéressant de conclure sur notre problématique en faisant des opérations entre  elles.
 
-- ##### Contraintes
+- #### Contraintes
 
 Malgré le fait que nos jeux de données soient chacunes assez complètes, elles ne proviennent pas de la même sources. Donc la fusion des jeux de données limites les comparaisons sur **15 164 enregistrement/lignes** dont **32 pays** répartis sur **les années [2008;2016]**.
 
-- ##### Correlation
+- #### Correlation
 
 ![heatmap_correlation_analytics](images/analytics/heatmap_correlation_analytics.png)
 - <ins>Explication du graphique:</ins>
@@ -265,7 +342,6 @@ Malgré le fait que nos jeux de données soient chacunes assez complètes, elles
   
 En combinant nos jeux de données, on a découvert **3 groupes de pays qui présentent des comportements similaires** grâce à la correlation entre l'obésité et l'emploi dans les activités manuelles/bureautiques.
 
-### 3. Conclusion
+## 3. Conclusion
 
-
-
+On peut dire qu'il existe un lien entre les emplois manuels/bureautiques et l'obésité.

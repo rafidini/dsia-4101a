@@ -158,7 +158,7 @@ if __name__ == '__main__':
     app.title = "Dashboard"
 
     # Execute l'application Dash sur un serveur web local
-    app.run_server(debug=True)
+    app.run_server(debug=False)
 
     pass
 

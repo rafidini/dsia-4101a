@@ -1,0 +1,818 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/itokiana/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.13/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="introduction">Introduction</h1>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/fr/7/71/Logo_ESIEE_Paris.svg" alt="ESIEE Paris"><br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Python_logo_and_wordmark.svg" alt="Python"></p>
+<blockquote>
+<p>sources: <a href="https://upload.wikimedia.org/wikipedia/commons/f/f8/Python_logo_and_wordmark.svg">python</a>, <a href="https://upload.wikimedia.org/wikipedia/fr/7/71/Logo_ESIEE_Paris.svg">ESIEE Paris</a></p>
+</blockquote>
+<p>Dans le cadre du module &quot;<em>Python pour la datascience</em>&quot; (<strong>DSIA-4101A</strong>), nous avons eu l&apos;opportunit&#xE9; de cr&#xE9;er un dashboard liant les comp&#xE9;tences acquises gr&#xE2;ce ce module avec notre cr&#xE9;ativit&#xE9;. Le projet se r&#xE9;alisa en bin&#xF4;me et l&apos;objectif fut de fournir une repr&#xE9;sentation int&#xE9;ractive (dashboard) d&apos;un jeu de donn&#xE9;es accessibles publiquement et non modifi&#xE9;es.</p>
+<p>Notre responsable:</p>
+<ul>
+<li><strong>COURIVAUD Daniel</strong></li>
+</ul>
+<p>Notre bin&#xF4;me est compos&#xE9; de:</p>
+<ul>
+<li><strong>RAFIDINARIVO Itokiana</strong></li>
+<li><strong>FONTA Romain</strong></li>
+</ul>
+<p>Et nos jeux de donn&#xE9;es sont:</p>
+<ul>
+<li><em><a href="https://www.kaggle.com/amanarora/obesity-among-adults-by-country-19752016">Obesity among adults by country, 1975-2016</a></em>
+<blockquote>
+<p><em>source: Kaggle</em></p>
+</blockquote>
+</li>
+<li><em><a href="https://stats.oecd.org/Index.aspx?QueryId=3491">Employment by activities (ISIC Rev.4)</a></em>
+<blockquote>
+<p><em>source: OECD Stats</em></p>
+</blockquote>
+</li>
+</ul>
+<h4 class="mume-header" id="probl%C3%A9matique">Probl&#xE9;matique</h4>
+
+<p>Alors notre bin&#xF4;me s&apos;est demand&#xE9;: <ins><em>Existe t&apos;il un lien entre l&apos;obesit&#xE9; et les emplois bureautiques <sup>et</sup>/<sub>ou</sub> manuels?</em></ins></p>
+<br>
+<hr>
+<h1 class="mume-header" id="table-des-mati%C3%A8res">Table des mati&#xE8;res</h1>
+
+<ul>
+<li><a href="#introduction">Introduction</a><br>
+- <a href="#probl%C3%A9matique">Probl&#xE9;matique</a></li>
+<li><a href="#table-des-mati%C3%A8res">Table des mati&#xE8;res</a>
+<ul>
+<li><a href="#i-guide-utilisateur">I. Guide utilisateur</a>
+<ul>
+<li><a href="#1-installation">1. Installation</a>
+<ul>
+<li><a href="#a-python-3xx">A. Python (3.X.X)</a></li>
+<li><a href="#b-le-dashboard">B. Le dashboard</a></li>
+</ul>
+</li>
+<li><a href="#2-ex%C3%A9cution">2. Ex&#xE9;cution</a>
+<ul>
+<li><a href="#a-windows">A. Windows</a></li>
+<li><a href="#b-linux-macos">B. Linux &amp; macOS</a></li>
+</ul>
+</li>
+<li><a href="#3-utilisation">3. Utilisation</a>
+<ul>
+<li><a href="#a-bar-de-navigation">A. Bar de navigation</a></li>
+<li><a href="#b-page-obesity">B. Page <em>Obesity</em></a></li>
+<li><a href="#c-page-employment">C. Page <em>Employment</em></a></li>
+<li><a href="#d-page-analytics">D. Page <em>Analytics</em></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ii-guide-d%C3%A9veloppeur">II. Guide d&#xE9;veloppeur</a></li>
+<li><a href="#iii-rapport-danalyse">III. Rapport d&apos;analyse</a>
+<ul>
+<li><a href="#1-les-donn%C3%A9es">1. Les donn&#xE9;es</a>
+<ul>
+<li><a href="#a-obesity-among-adults-by-country-1975-2016">A. Obesity among adults by country, 1975-2016</a></li>
+<li><a href="#b-employment-by-activities-isic-rev4">B. Employment by activities (ISIC Rev.4)</a></li>
+</ul>
+</li>
+<li><a href="#2-observations">2. Observations</a>
+<ul>
+<li><a href="#a-obesity-among-adults-by-country-1975-2016-1">A. Obesity among adults by country, 1975-2016</a></li>
+<li><a href="#b-employment-by-activities-isic-rev4-1">B. Employment by activities (ISIC Rev.4)</a></li>
+<li><a href="#c-comparaison-des-jeux-de-donn%C3%A9es">C. Comparaison des jeux de donn&#xE9;es</a></li>
+</ul>
+</li>
+<li><a href="#3-conclusion">3. Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="mume-header" id="i-guide-utilisateur">I. Guide utilisateur</h2>
+
+<h3 class="mume-header" id="1-installation">1. Installation</h3>
+
+<h4 class="mume-header" id="a-python-3xx">A. Python (3.X.X)</h4>
+
+<p>Dans un premier temps, afin d&apos;utiliser notre projet il faudra poss&#xE9;der <em><strong>Python v3.X.X</strong></em> sur votre appareil. Pour cela, que votre appareil soit sous Linux, macOS, Windows ou autre, rendez vous la page de t&#xE9;l&#xE9;chargement de Python en cliquant <a href="https://www.python.org/downloads/">ici</a>. Puis suivez les instructions lors de l&apos;installation.</p>
+<p>Apr&#xE8;s l&apos;installation, v&#xE9;rifiez que <em><strong>Python v3.X.X</strong></em> est bien install&#xE9; sur votre appareil en tapant les commandes suivantes sur le Terminal, Invit&#xE9; de commandes, PowerShell ou autre selon votre syst&#xE8;me d&apos;exploitation:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ python3 --version
+Python 3.X.X
+</pre><p>Ou</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ python --version
+Python 3.X.X
+</pre><p>Dans le cas o&#xF9; vous avez ce r&#xE9;sultat:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">Python 2.X.X
+</pre><p>Alors reinstallez une version 3.X.X de Python.</p>
+<h4 class="mume-header" id="b-le-dashboard">B. Le dashboard</h4>
+
+<h3 class="mume-header" id="2-ex%C3%A9cution">2. Ex&#xE9;cution</h3>
+
+<h4 class="mume-header" id="a-windows">A. Windows</h4>
+
+<h4 class="mume-header" id="b-linux-macos">B. Linux &amp; macOS</h4>
+
+<p>Lancez un terminal/invit&#xE9; de commandes/console au niveau du projet:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ <span class="token function">cd</span> <span class="token punctuation">[</span>Le chemin menant au dossier<span class="token punctuation">]</span>/Projet
+$ <span class="token function">ls</span>
+README.md     app.py     data     src
+</pre><p>Il faudra bien-s&#xFB;r remplacer le &quot;<em>[Le chemin menant au dossier]</em>&quot; par le chemin r&#xE9;el sur votre appareil. Si vous ne vous retrouvez pas avec le m&#xEA;me affichage alors v&#xE9;rifiez si vous &#xEA;tes bien dans le bon dossier ou non sinon jusqu&apos;&#xE0; l&#xE0; c&apos;est bon.</p>
+<p>Une fois que vous avez le m&#xEA;me affichage, lancez une des commandes suivantes afin de lancer l&apos;application:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ python3 app.py
+</pre><p>Ou</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ python app.py
+</pre><p>Si tout se passe bien alors vous aurez cette affichage:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ python3 app.py
+Dash is running on http://127.0.0.1:8050/
+
+ * Serving Flask app <span class="token string">&quot;app&quot;</span> <span class="token punctuation">(</span>lazy loading<span class="token punctuation">)</span>
+ * Environment: production
+   WARNING: This is a development server. Do not use it <span class="token keyword">in</span> a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+</pre><h3 class="mume-header" id="3-utilisation">3. Utilisation</h3>
+
+<h4 class="mume-header" id="a-bar-de-navigation">A. Bar de navigation</h4>
+
+<p><img src="images/utilisation/navigation_bar.png" alt="navigation_bar.png"></p>
+<p>Pour d&apos;acc&#xE9;der aux diff&#xE9;rentes pages propos&#xE9;es par l&apos;application il y a la bar de navigation (ci-dessus). L&apos;application propose 3 pages:</p>
+<ul>
+<li><em>Obesity</em></li>
+<li><em>Employment</em></li>
+<li><em>Analytics</em><br>
+Tous sont accessibles en cliquant sur le label correspondant &#xE0; la page &#xE0; droite de la bar de navigation.</li>
+</ul>
+<h4 class="mume-header" id="b-page-obesity">B. Page <em>Obesity</em></h4>
+
+<p>Lorsque l&apos;installation et l&apos;&#xE9;xecution ont bien &#xE9;t&#xE9; resp&#xE9;ct&#xE9;s alors on se retrouve sur la page suivante:</p>
+<p><img src="images/utilisation/page_obesity_main.png" alt="page_obesity_main.png"></p>
+<p>Sur cette page, <em>Obesity</em>,  on utilise le jeu de donn&#xE9;es <em>Obesity among adults by country, 1975-2016</em>.</p>
+<ul>
+<li>
+<h5>Fen&#xEA;tre principale</h5>
+</li>
+</ul>
+<p><img src="images/utilisation/page_obesity_main_interaction.gif" alt="page_obesity_main_interaction.gif"></p>
+<p>La page permet d&apos;int&#xE9;ragir avec la carte du monde et l&apos;histogramme situ&#xE9;s du c&#xF4;t&#xE9; droit de la page &#xE0; partir du &quot;<em>slider</em>&quot; situ&#xE9; en haut &#xE0; gauche afin de d&#xE9;filer les ann&#xE9;es. Cela permet de voir la progression du pourcentage d&apos;obesit&#xE9; sur une repr&#xE9;sentation g&#xE9;olocalis&#xE9;e et la distribution de celle-ci au cours des ann&#xE9;es.</p>
+<ul>
+<li>
+<h5>Fen&#xEA;tre secondaire</h5>
+</li>
+</ul>
+<p>La fen&#xEA;tre secondaire est une fen&#xEA;tre sur laquelle on peut avoir plus d&apos;information sur une r&#xE9;gion sp&#xE9;cifique, c&apos;est-&#xE0;-dire un pays ou un continent. Celle-ci appara&#xEE;t lorsque que l&apos;on appuie sur le bouton &quot;<em>Submit</em>&quot; apr&#xE8;s avoir choisi la r&#xE9;gion ou lorsque l&apos;on change de pays/continent. Voici deux examples:</p>
+<p><img src="images/utilisation/page_obesity_open_country.gif" alt="page_obesity_open_country.gif"></p>
+<blockquote>
+<p>Apparition de la fen&#xEA;tre secondaire pour un pays sp&#xE9;cifique</p>
+</blockquote>
+<br>
+<p><img src="images/utilisation/page_obesity_open_continent.gif" alt="page_obesity_open_continent.gif"></p>
+<blockquote>
+<p>Apparition de la fen&#xEA;tre secondaire pour un continent sp&#xE9;cifique</p>
+</blockquote>
+<br>
+<p><strong>Mais ducoup qu&apos;est-ce que l&apos;on peut faire sur cette fen&#xEA;tre secondaire?</strong></p>
+<ul>
+<li>Changer l&apos;intervalle pour int&#xE9;rargir avec le graphique repr&#xE9;sentant l&apos;&#xE9;volution du pourcentage d&apos;ob&#xE9;sit&#xE9; par sex.</li>
+</ul>
+<p><img src="images/utilisation/page_obesity_secondary_lineplot.gif" alt="page_obesity_secondary_lineplot.gif"></p>
+<ul>
+<li>Changer l&apos;ann&#xE9;e pour int&#xE9;ragir avec:
+<ul>
+<li>Le camembert repr&#xE9;sentant le part de personnes ob&#xE8;ses et non ob&#xE8;ses au sein de la r&#xE9;gion.</li>
+<li>Le rang de la r&#xE9;gion par rapport aux autres (<em>ex: un pays sera compar&#xE9; &#xE0; tout les autres pays du monde, un continent sera compar&#xE9; aux autres continents</em>). Ce rang est d&#xE9;finit tel que plus le rang est petit, plus faible est le pourcentage d&apos;ob&#xE9;sit&#xE9; et r&#xE9;ciproquement plus le rang est grand, plus &#xE9;lev&#xE9; est le pourcentage d&apos;ob&#xE9;sit&#xE9;.</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/utilisation/page_obesity_secondary_piechart.gif" alt="page_obesity_secondary_piechart.gif"></p>
+<p>Et bien s&#xFB;r pour quitter la fen&#xEA;tre secondaire il suffit de cliquer sur le bouton rouge &quot;<span style="color:red"><b>Close</b></span>&quot;.</p>
+<h4 class="mume-header" id="c-page-employment">C. Page <em>Employment</em></h4>
+
+<h4 class="mume-header" id="d-page-analytics">D. Page <em>Analytics</em></h4>
+
+<p><img src="images/utilisation/page_analytics_main.png" alt="page_analytics_main.png"></p>
+<p>Sur cette page, <em>Analytics</em>, on utilise les deux jeux de donn&#xE9;es combin&#xE9;s en un seul et on utilisera 2 types de graphiques pour 3 types de correlation diff&#xE9;rentes.</p>
+<ul>
+<li>
+<h5>Correlation par pays</h5>
+</li>
+</ul>
+<p><img src="images/utilisation/page_analytics_lineplot_interaction.gif" alt="page_analytics_lineplot_interaction.gif"></p>
+<ul>
+<li>
+<h5>&quot;Carte de chaleur&quot;</h5>
+</li>
+</ul>
+<p><img src="images/utilisation/page_analytics_heatmap_interaction.gif" alt="page_analytics_heatmap_interaction.gif"></p>
+<h2 class="mume-header" id="ii-guide-d%C3%A9veloppeur">II. Guide d&#xE9;veloppeur</h2>
+
+<h2 class="mume-header" id="iii-rapport-danalyse">III. Rapport d&apos;analyse</h2>
+
+<h3 class="mume-header" id="1-les-donn%C3%A9es">1. Les donn&#xE9;es</h3>
+
+<h4 class="mume-header" id="a-obesity-among-adults-by-country-1975-2016">A. Obesity among adults by country, 1975-2016</h4>
+
+<p>Ce jeu de donn&#xE9;es provient de <em><a href="https://www.kaggle.com/amanarora/obesity-among-adults-by-country-19752016">Kaggle</a></em>, une communaut&#xE9; regroupant des outils et des ressources pour la data science, pr&#xE9;cis&#xE9;ment celui-ci a &#xE9;t&#xE9; modifi&#xE9; par l&apos;utilisateur <em><a href="https://www.kaggle.com/amanarora">Aman Arora</a></em> &#xE0; partir des donn&#xE9;es originales se trouvant <a href="https://apps.who.int/gho/data/node.main.A900A?lang=en">ici</a> sur le site l&apos;<em>Organisation Mondiale de la Sant&#xE9; (OMS)</em>.</p>
+<p>Dans ce jeu de donn&#xE9;es on retrouve le pourcentage de personnes ob&#xE8;ses, pour les hommes/femmes/les deux, au sein d&apos;un pays pour une ann&#xE9;e sp&#xE9;cifique. Celui-ci est compos&#xE9; de <strong>24 570 enregistrements/lignes</strong> et de <strong>8 variables</strong>.</p>
+<p>Voici la structure du jeu de donn&#xE9;es post-traitement:</p>
+<br>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Variables</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>country</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>Le pays</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>country_code</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>Le code du pays en format ISO3</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>continent</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>Le continent, associ&#xE9; au <strong>country</strong></em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>year</strong></td>
+<td style="text-align:center">Num&#xE9;rique (ratio)</td>
+<td style="text-align:left"><em>L&apos;ann&#xE9;e</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>sex</strong></td>
+<td style="text-align:center">Categoriel binaire (nominal)</td>
+<td style="text-align:left"><em>Le sexe, on ne prend en compte que l&apos;homme ou la femme</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>obesity</strong></td>
+<td style="text-align:center">Num&#xE9;rique (ratio)</td>
+<td style="text-align:left"><em>L&apos;obesit&#xE9; moyenne en pourcentage pour un pays et un sexe donn&#xE9;</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>max_obesity</strong></td>
+<td style="text-align:center">Num&#xE9;rique (ratio)</td>
+<td style="text-align:left"><em>La valeure minimale en pourcentage de l&apos;obesit&#xE9;</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>min_obesity</strong></td>
+<td style="text-align:center">Num&#xE9;rique (ratio)</td>
+<td style="text-align:left"><em>La valeure maximale en pourcentage de l&apos;obesit&#xE9;</em></td>
+</tr>
+</tbody>
+</table>
+<p><ins>Remarques :</ins></p>
+<ul>
+<li>On ne travaille pas avec les variables <strong>max_obesity</strong> et  <strong>min_obesity</strong>, ceux-ci ont &#xE9;t&#xE9; gard&#xE9;es au cas o&#xF9; elles deviendraient utiles &#xE0; autrui ult&#xE9;rieurement.</li>
+<li>La variable <strong>country_code</strong> sert pour le graphique g&#xE9;olocalis&#xE9;, on utilise un jeu de donn&#xE9;es compl&#xE9;mentaire afin d&apos;obtenir les coordonn&#xE9;es g&#xE9;ographiques de chaque pays.</li>
+</ul>
+<br>
+<h4 class="mume-header" id="b-employment-by-activities-isic-rev4">B. Employment by activities (ISIC Rev.4)</h4>
+
+<p>Ce jeu de donn&#xE9;es provient de <em><a href="https://stats.oecd.org/Index.aspx?QueryId=3491">OECD (Organisation for Economic Co-operation and Development)</a></em>, une organisation &#xE9;conomique intergouvernementale compos&#xE9;e de 37 pays fond&#xE9;e en 1961 (<em>Wikipedia</em>) dans le but de stimuler la progression &#xE9;conomique et les &#xE9;changes.</p>
+<p>Dans ce jeu de donn&#xE9;es on retrouve le nombre d&apos;employ&#xE9;s selon des activit&#xE9;s &#xE9;conomiques. Ces activit&#xE9;s &#xE9;conomiques sont d&#xE9;finies par l&apos;<em>International Standard Industrial Classification (ISIC) Revision 4</em>, on y retrouve les activit&#xE9;s suivantes:</p>
+<ol>
+<li>Agriculture, forestry and fishing</li>
+<li>Mining and quarrying</li>
+<li>Manufacturing</li>
+<li>Electricity, gas, steam and air conditioning supply</li>
+<li>Water supply; sewerage, waste management and remediation activities</li>
+<li>Construction</li>
+<li>Wholesale and retail trade; repair of motor vehicles and motorcycles</li>
+<li>Transportation and storage</li>
+<li>Accommodation and food service activities</li>
+<li>Information and communication</li>
+<li>Financial and insurance activities</li>
+<li>Real estate activities</li>
+<li>Professional, scientific and technical activities</li>
+<li>Administrative and support service activities</li>
+<li>Public administration and defence; compulsory social security</li>
+<li>Education</li>
+<li>Human health and social work activities</li>
+<li>Arts, entertainment and recreation</li>
+<li>Other service activities</li>
+<li>Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use</li>
+<li>Activities of extraterritorial organizations and bodies</li>
+</ol>
+<p>Voici la structure du jeu de donn&#xE9;es post-traitement:</p>
+<br>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Variables</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>country</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>Le pays</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>country_code</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>Le code du pays en format ISO3</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>continent</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>Le continent, associ&#xE9; au pays</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>sex</strong></td>
+<td style="text-align:center">Categoriel binaire (nominal)</td>
+<td style="text-align:left"><em>Le sexe, on ne prend en compte que l&apos;homme ou la femme</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>year</strong></td>
+<td style="text-align:center">Num&#xE9;rique (ratio)</td>
+<td style="text-align:left"><em>L&apos;ann&#xE9;e</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>subject</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>L&apos;activit&#xE9; &#xE9;conomique (list&#xE9;es au-dessus)</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>activity</strong></td>
+<td style="text-align:center">Categoriel binaire (nominal)</td>
+<td style="text-align:left"><em>Le type d&apos;emploi, soit bureautique, soit manuel</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>value</strong></td>
+<td style="text-align:center">Num&#xE9;rique (ratio)</td>
+<td style="text-align:left"><em>Le nombre d&apos;employ&#xE9;s dans le secteur, associ&#xE9; &#xE0; un secteur/ann&#xE9;e/pays</em></td>
+</tr>
+</tbody>
+</table>
+<p><ins>Remarques :</ins></p>
+<ul>
+<li>La cr&#xE9;ation de la variable <strong>activity</strong> a &#xE9;t&#xE9; faite manuellement &#xE0; partir de la variable <strong>subject</strong> donc celle-ci reste subjective &#xE0; notre bin&#xF4;me.</li>
+</ul>
+<br>
+<h3 class="mume-header" id="2-observations">2. Observations</h3>
+
+<p>Maintenant analysons les jeux de donn&#xE9;es sur l&apos;ob&#xE9;sit&#xE9; et l&apos;emploi afin de r&#xE9;pondre &#xE0; notre probl&#xE9;matique.</p>
+<h4 class="mume-header" id="a-obesity-among-adults-by-country-1975-2016-1">A. Obesity among adults by country, 1975-2016</h4>
+
+<ul>
+<li>
+<h5>Cartographie &amp; Distribution</h5>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">1975</th>
+<th style="text-align:center">1996</th>
+<th style="text-align:center">2016</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="images/obesity/map_obesity_1975.png" alt="map_obesity_1975"></td>
+<td style="text-align:center"><img src="images/obesity/map_obesity_1996.png" alt="map_obesity_1996"></td>
+<td style="text-align:center"><img src="images/obesity/map_obesity_2016.png" alt="map_obesity_2016"></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="images/obesity/distribution_obesity_1975.png" alt="distribution_obesity_1975"></td>
+<td style="text-align:center"><img src="images/obesity/distribution_obesity_1996.png" alt="distribution_obesity_1996"></td>
+<td style="text-align:center"><img src="images/obesity/distribution_obesity_2016.png" alt="distribution_obesity_2016"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>On observe plusieurs choses avec ces cartes et histogrammes:</p>
+<ul>
+<li>Les <strong>pays les moins d&#xE9;velopp&#xE9;s</strong> sont ceux qui poss&#xE8;dent une <strong>croissance faible m&#xEA;me quasi nulle du pourcentage d&apos;obesit&#xE9;</strong>.</li>
+<li>Les <strong>pays les plus d&#xE9;velopp&#xE9;es/riches</strong> et les <strong>pays en voie de d&#xE9;veloppement</strong> poss&#xE8;dent une croissance un peu plus &#xE9;lev&#xE9;e du pourcentage d&apos;ob&#xE9;sit&#xE9;.</li>
+<li>Un pays a r&#xE9;ussi &#xE0; avoir une majorit&#xE9; de sa population en ob&#xE9;sit&#xE9; (<em>Nauru</em>).</li>
+</ul>
+</li>
+<li>
+<h5>Analyse spacio-temporelle</h5>
+</li>
+</ul>
+<p><ins>Selon les continents:</ins></p>
+<p><img src="images/obesity/evolution_obesity_continent.png" alt="evolution_obesity_continent"></p>
+<ul>
+<li>
+<p>On observe plusieurs choses avec ce graphique:</p>
+<ul>
+<li><strong>Dans chaque continent</strong> le pourcentage d&apos;obesit&#xE9; au sein de la population ne fait <strong>que augmenter</strong>.</li>
+<li>Le continent avec me pourcentage d&apos;ob&#xE9;sit&#xE9; le plus &#xE9;lev&#xE9; est l&apos;<strong>Oc&#xE9;anie</strong>.</li>
+<li>Le continent avec le pourcentage d&apos;ob&#xE9;sit&#xE9; le plus faible est l&apos;<strong>Afrique</strong>.</li>
+</ul>
+</li>
+<li>
+<p><ins>Critiques:</ins></p>
+<ul>
+<li>Le calcul du pourcentage d&apos;ob&#xE9;sit&#xE9; par continent s&apos;est fait par le calcul des moyennes d&apos;ob&#xE9;sit&#xE9; de chaque pays du continent sans prendre en compte le coefficient de population par pays, donc les r&#xE9;sultats ne sont pas &#xE0; 100% repr&#xE9;sentatifs de la r&#xE9;alit&#xE9;.</li>
+</ul>
+</li>
+</ul>
+<p><ins>Selon les continents et le sexe:</ins></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Continent</th>
+<th style="text-align:center">Graphique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Asie</td>
+<td style="text-align:center"><img src="images/obesity/evolution_obesity_asia.png" alt="evolution_obesity_asia"></td>
+</tr>
+<tr>
+<td style="text-align:center">Europe</td>
+<td style="text-align:center"><img src="images/obesity/evolution_obesity_europe.png" alt="evolution_obesity_europe"></td>
+</tr>
+<tr>
+<td style="text-align:center">Amerique du nord</td>
+<td style="text-align:center"><img src="images/obesity/evolution_obesity_north_america.png" alt="evolution_obesity_north_america"></td>
+</tr>
+<tr>
+<td style="text-align:center">Amerique du sud</td>
+<td style="text-align:center"><img src="images/obesity/evolution_obesity_south_america.png" alt="evolution_obesity_south_america"></td>
+</tr>
+<tr>
+<td style="text-align:center">Oc&#xE9;anie</td>
+<td style="text-align:center"><img src="images/obesity/evolution_obesity_oceania.png" alt="evolution_obesity_oceania"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>On observe plusieurs choses avec ce graphique:</p>
+<ul>
+<li>Dans tout les continents, peut importe le sexe, <strong>la tendance pour le pourcentage de l&apos;ob&#xE9;sit&#xE9; est d&apos;augmenter</strong>.</li>
+<li>Dans la majorit&#xE9; des continents <strong>le pourcentage de femmes ob&#xE8;ses est toujours plus &#xE9;lev&#xE9; que les hommes</strong>.</li>
+<li><strong>L&apos;Europe est le seul continent qui a invers&#xE9; la position des courbes des hommes et des femmes</strong>. Donc &#xE0; partir d&apos;une certaine ann&#xE9;e le pourcentage d&apos;hommes ob&#xE8;ses est devenu plus &#xE9;lev&#xE9; que celui des femmes ob&#xE8;ses.</li>
+</ul>
+</li>
+<li>
+<p><ins>Critiques:</ins></p>
+<ul>
+<li>On retouve ici le m&#xEA;me probl&#xE8;me que le graphique pr&#xE9;c&#xE9;dent puisqu&apos;on n&apos;utilise pas le coefficient de la population pour le calcul de la moyenne d&apos;ob&#xE9;sit&#xE9;.</li>
+</ul>
+</li>
+<li>
+<h5>Bilan</h5>
+</li>
+</ul>
+<p>A partir de toutes ces observations on peut conclure que l&apos;ob&#xE9;sit&#xE9; est une maladie qui touche le monde entier cependant certains sont plus touch&#xE9;s que d&apos;autres, notamment les pays riches et  les plus d&#xE9;velopp&#xE9;s &#xE0; quelques exceptions pr&#xE8;s. En plus de cela, les femmes sont plus touch&#xE9;es que les hommes par cette maladie en g&#xE9;n&#xE9;ral cependant on observe une transition de cette tendance en Europe. Malheureusement <strong>l&apos;ob&#xE9;sit&#xE9; peut &#xEA;tre d&#xE9;crite comme une fonction croissante par rapport au temps</strong>, c&apos;est-&#xE0;-dire que le pourcentage de personnes ob&#xE8;ses ne fait qu&apos;augmenter.</p>
+<h4 class="mume-header" id="b-employment-by-activities-isic-rev4-1">B. Employment by activities (ISIC Rev.4)</h4>
+
+<ul>
+<li>
+<h5>Analyse spacio-temporelle</h5>
+</li>
+<li>
+<h5>Bilan</h5>
+</li>
+</ul>
+<h4 class="mume-header" id="c-comparaison-des-jeux-de-donn%C3%A9es">C. Comparaison des jeux de donn&#xE9;es</h4>
+
+<p>Nos deux jeux de donn&#xE9;es nous ont appris beaucoup de choses, cependant il serait int&#xE9;ressant de conclure sur notre probl&#xE9;matique en faisant des op&#xE9;rations entre  elles.</p>
+<ul>
+<li>
+<h5>Contraintes</h5>
+</li>
+</ul>
+<p>Malgr&#xE9; le fait que nos jeux de donn&#xE9;es soient chacunes assez compl&#xE8;tes, elles ne proviennent pas de la m&#xEA;me sources. Donc la fusion des jeux de donn&#xE9;es limites les comparaisons sur <strong>15 164 enregistrement/lignes</strong> dont <strong>32 pays</strong> r&#xE9;partis sur <strong>les ann&#xE9;es [2008;2016]</strong>.</p>
+<ul>
+<li>
+<h5>Correlation</h5>
+</li>
+</ul>
+<p><img src="images/analytics/heatmap_correlation_analytics.png" alt="heatmap_correlation_analytics"></p>
+<ul>
+<li><ins>Explication du graphique:</ins>
+<ul>
+<li>En abscisse, les pays</li>
+<li>En ordonn&#xE9;e, le type d&apos;activit&#xE9; (<em>Desk: Bureautique, Manual: Manuel</em>)</li>
+<li>Les carr&#xE9;s repr&#xE9;sentent la correlation entre l&apos;ob&#xE9;sit&#xE9; et le nombre d&apos;employ&#xE9;s dans le type d&apos;activit&#xE9;. La couleur des carr&#xE9;s est interpr&#xE9;t&#xE9; de la mani&#xE8;re suivante:
+<ul>
+<li>Plus le carr&#xE9; se rapproche du <strong><span style="color:blue">bleu</span></strong>, donc de la valeur <strong><span style="color:blue">1</span></strong>, alors correlation est positive. Cela signifie que <strong><span style="color:blue">l&apos;ob&#xE9;sit&#xE9; et le type d&apos;activit&#xE9; peuvent &#xEA;tre repr&#xE9;sent&#xE9;s par une fonction croissante</span></strong>.</li>
+<li>Plus le carr&#xE9; se rapproche du <strong><span style="color:red">rouge</span></strong>, donc de la valeur <strong><span style="color:red">-1</span></strong>, alors correlation est positive. Cela signifie que <strong><span style="color:red">l&apos;ob&#xE9;sit&#xE9; et le type d&apos;activit&#xE9;s peuvent &#xEA;tre repr&#xE9;sent&#xE9; par une fonction d&#xE9;croissante</span></strong>.</li>
+</ul>
+</li>
+<li>Par exemple pour la France:
+<ul>
+<li><strong>Desk/Obesity</strong> en bleu implique que <strong><span style="color:blue">le pourcentage d&apos;obesit&#xE9; augmente lorsque le nombre d&apos;employ&#xE9;s dans les bureaux augmente</span></strong>.</li>
+<li><strong>Manual/Obesity</strong> en rouge implique que <strong><span style="color:red">le pourcentage d&apos;obesit&#xE9; baisse lorsque le nombre d&apos;employ&#xE9;s travaillant manuellement augmente</span></strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul>
+<li><ins>Observations:</ins>
+<ul>
+<li><strong><span style="color:blue">Desk</span> <span style="color:red">Manual</span></strong>: <b>14 pays</b> (<em>Denmark, Finland, France, Hungary, Ireland, Italy, Japan, Latvia, Lithuania, Netherlands, Poland, Portugal, Slovenia, Sweden</em>)</li>
+<li><strong><span style="color:blue">Desk</span> <span style="color:blue">Manual</span></strong>: <b>16 pays</b> (<em>Australia, Austria, Belgium, Chile, Colombia, Costa Rica, Estonia, Germany, Iceland, Israel, Luxembourg, Mexico, New Zealand, Norway, Switzerland, Turkey</em>)</li>
+<li><strong><span style="color:red">Desk</span> <span style="color:red">Manual</span></strong>: <b>2 pays</b> (<em>Greece, Spain</em>)</li>
+</ul>
+</li>
+<li><ins>Hypoth&#xE8;ses:</ins>
+<ul>
+<li>Pour les pays en <strong><span style="color:blue">Desk</span> <span style="color:red">Manual</span></strong> sont les pays qui ont tendance &#xE0; moins recruter dans les m&#xE9;tiers manuels mais plus dans les m&#xE9;tiers bureautiques.</li>
+<li>Pour les pays en <strong><span style="color:blue">Desk</span> <span style="color:blue">Manual</span></strong> sont les pays qui recrutent dans les m&#xE9;tiers manuels et bureautiques.</li>
+<li>Pour les pays en <strong><span style="color:red">Desk</span> <span style="color:red">Manual</span></strong> sont les pays qui sont possiblement en crise.</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul>
+<li><strong>Bilan</strong></li>
+</ul>
+<p>En combinant nos jeux de donn&#xE9;es, on a d&#xE9;couvert <strong>3 groupes de pays qui pr&#xE9;sentent des comportements similaires</strong> gr&#xE2;ce &#xE0; la correlation entre l&apos;ob&#xE9;sit&#xE9; et l&apos;emploi dans les activit&#xE9;s manuelles/bureautiques.</p>
+<h3 class="mume-header" id="3-conclusion">3. Conclusion</h3>
+
+<p>On peut dire qu&apos;il existe un lien entre les emplois manuels/bureautiques et l&apos;ob&#xE9;sit&#xE9;.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
