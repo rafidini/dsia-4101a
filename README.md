@@ -28,7 +28,7 @@ ___
 
 # Table des matières
 
-[TOC]
+[[_TOC_]]
 ___
 
 
