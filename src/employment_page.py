@@ -1,3 +1,7 @@
+"""
+Module pour la page employment.
+"""
+
 # Imports
 import dash
 import dash_bootstrap_components as dbc

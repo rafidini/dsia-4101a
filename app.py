@@ -1,17 +1,26 @@
 # Imports
-import pandas as pd
-import plotly.express as px 
 import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
+import pandas as pd
+import plotly.express as px
 from dash.dependencies import Input, Output
 
 # Imports de fichiers en local
-from src.navigation_bar import navigationBar
-from src.obesity_page import pageObesity, graph_map_obesity, graph_bar_obesity, dropdown_countries, dropdown_continents, graph_line_obesity_group, graph_pie_obesity_group, rank_obesity_group
+from src.analytics_page import (correlation_alert_component_analytics,
+                                correlation_obesity_employment_analytics,
+                                country_selection,
+                                graph_obesity_employment_analytics,
+                                heatmap_obesity_employment_analytics,
+                                lineplot_graph, pageAnalytics)
 from src.employment_page import pageEmployment
-from src.analytics_page import pageAnalytics, graph_obesity_employment_analytics, correlation_alert_component_analytics, correlation_obesity_employment_analytics, lineplot_graph, country_selection, heatmap_obesity_employment_analytics
+
+from src.navigation_bar import navigationBar
+from src.obesity_page import (dropdown_continents, dropdown_countries,
+                              graph_bar_obesity, graph_line_obesity_group,
+                              graph_map_obesity, graph_pie_obesity_group,
+                              pageObesity, rank_obesity_group)
 
 # Application: Dashboard
 if __name__ == '__main__':
@@ -158,7 +167,7 @@ if __name__ == '__main__':
     app.title = "Dashboard"
 
     # Execute l'application Dash sur un serveur web local
-    app.run_server(debug=False)
+    app.run_server(debug=True)
 
     pass
 

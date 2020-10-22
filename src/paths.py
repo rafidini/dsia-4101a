@@ -1,3 +1,7 @@
+"""
+Module pour la gestion des chemins.
+"""
+
 # Imports
 import os
 

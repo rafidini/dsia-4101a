@@ -1,3 +1,7 @@
+"""
+Module pour la page obesity.
+"""
+
 # Imports
 import numpy as np
 import pandas as pd
@@ -289,16 +293,11 @@ def generate_dropdown(dataframe, feature):
     return dropdown
 
 
-#print(rank_obesity_group(1975, "Continents", "Europe"))
-
 # Variables pour les elements de la page
 minYear = obesity.year.min()
 maxYear = obesity.year.max()
 dropdown_continents = generate_dropdown(obesity, 'continent')
 dropdown_countries = generate_dropdown(obesity, 'country')
-
-#for continent in continents: dropdown_continents.append({'label': continent, 'value':continent})
-#for country in countries: dropdown_countries.append({'label': country, 'value': country})
 
 # Selection du type de groupe
 radioitems = dbc.FormGroup(

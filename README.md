@@ -28,13 +28,13 @@ ___
 
 # Table des matières
 
-[[_TOC_]]
+[TOC]
 ___
 
 
 # I. Guide utilisateur
 
-## 1. Installation
+## 1. Installation & Téléchargement
 
 ### A. Python (3.X.X)
 Dans un premier temps, afin d'utiliser notre projet il faudra posséder ***Python v3.X.X*** sur votre appareil. Pour cela, que votre appareil soit sous Linux, macOS, Windows ou autre, rendez vous la page de téléchargement de Python en cliquant [ici](https://www.python.org/downloads/). Puis suivez les instructions lors de l'installation.
@@ -58,18 +58,91 @@ Python 2.X.X
 ```
 Alors reinstallez une version 3.X.X de Python.
 
-### B. Le dashboard
+### B. *pip*/*pip3*
+
+Dans un second temps, installer Python ne suffit pas. Le projet utilise différents "*packages*" qui ne sont pas disponibles automatiquement avec ***Python*** alors il faudra installer *pip*.
+
+*pip* n'a pas besoin d'être installé si la version est:
+- Python 2.X.X >= **2.7.9**
+- Python 3.X.X >= **3.4**
+
+Sinon voici un lien pour le télécharger [ici](https://pip.pypa.io/en/stable/installing/).
+
+### C. Le dashboard
+
+#### Télécharger le projet
+
+Le projet est téléchargeable sur le la page suivante [ici](https://git.esiee.fr/rafidini/dsia-4101a). Celui-ci pourra être utilisé comme un "Git Repository", en "*forkant*" le projet, ou comme un projet dossier normal, en "*clonant*" le projet sur votre ordinateur.
+
+#### Packages nécessaires
+
+Pour que le projet marche comme il faut, des packages supplémentaires sont nécessaires. Le nom de ces packages sont disponibles dans le fichier *requirements.txt*:
+
+```bash
+...
+dash==1.16.0
+dash-bootstrap-components==0.10.6
+dash-core-components==1.12.0
+dash-html-components==1.1.1
+dash-renderer==1.8.0
+dash-table==4.10.1
+decorator==4.4.2
+defusedxml==0.6.0
+descartes==1.1.0
+entrypoints==0.3
+...
+```
+
+Afin de les télécharger/installer voici les commandes possibles en fonction de votre configuration:
+
+```bash
+pip install -r requirements.txt
+```
+
+```bash
+pip3 install -r requirements.txt
+```
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+```bash
+python3 -m pip install -r requirements.txt
+```
 
 ## 2. Exécution
 
 ### A. Windows
 
+Lancez un invité de commande/cmd/powershell puis rendez-vous au niveau du dossier du projet:
+
+- Sous CMD
+```shell
+> CD [Le chemin menant au dossier]
+> DIR
+...
+```
+
+- Sous powershell
+```shell
+> cd [Le chemin menant au dossier]
+> ls
+README.md     app.py     data     src
+requirements.txt
+```
+
+Il faudra bien-sûr remplacer le "*[Le chemin menant au dossier]*" par le chemin réel sur votre appareil. Si vous ne vous retrouvez pas avec un affichage a peu près similaire alors vérifiez si vous êtes bien dans le bon dossier ou non sinon jusqu'à là c'est bon.  
+
+Une fois que vous avez le même affichage, lancez une des commandes suivantes afin de lancer l'application:
+
 ### B. Linux & macOS
 Lancez un terminal/invité de commandes/console au niveau du projet:
 ```bash
-$ cd [Le chemin menant au dossier]/Projet
+$ cd [Le chemin menant au dossier]
 $ ls
 README.md     app.py     data     src
+requirements.txt
 ```
 Il faudra bien-sûr remplacer le "*[Le chemin menant au dossier]*" par le chemin réel sur votre appareil. Si vous ne vous retrouvez pas avec le même affichage alors vérifiez si vous êtes bien dans le bon dossier ou non sinon jusqu'à là c'est bon.  
 
@@ -95,6 +168,8 @@ Dash is running on http://127.0.0.1:8050/
 ```
 
 ## 3. Utilisation
+
+Une fois éxécuté, le "*dashboard*" est accessible à l'adresse [http://127.0.0.1:8050/](http://127.0.0.1:8050/).
 
 ### A. Bar de navigation
 
@@ -136,14 +211,16 @@ La fenêtre secondaire est une fenêtre sur laquelle on peut avoir plus d'inform
 
 **Mais ducoup qu'est-ce que l'on peut faire sur cette fenêtre secondaire?**
 - Changer l'intervalle pour intérargir avec le graphique représentant l'évolution du pourcentage d'obésité par sex.
-
-![page_obesity_secondary_lineplot.gif](images/utilisation/page_obesity_secondary_lineplot.gif)
+  
+<img src="images/utilisation/page_obesity_secondary_lineplot.gif" alt="drawing" height="400"/>
 
 - Changer l'année pour intéragir avec:
   - Le camembert représentant le part de personnes obèses et non obèses au sein de la région.
   - Le rang de la région par rapport aux autres (*ex: un pays sera comparé à tout les autres pays du monde, un continent sera comparé aux autres continents*). Ce rang est définit tel que plus le rang est petit, plus faible est le pourcentage d'obésité et réciproquement plus le rang est grand, plus élevé est le pourcentage d'obésité.
 
-![page_obesity_secondary_piechart.gif](images/utilisation/page_obesity_secondary_piechart.gif)
+<img src="images/utilisation/page_obesity_secondary_piechart.gif" alt="drawing" height="400"/>
+
+<br>
 
 Et bien sûr pour quitter la fenêtre secondaire il suffit de cliquer sur le bouton rouge "<span style="color:red"><b>Close</b></span>".
 
@@ -165,9 +242,321 @@ Sur cette page, *Analytics*, on utilise les deux jeux de données combinés en u
 
 # II. Guide développeur
 
+Dans ce guide développeur la structure, le code des scripts python et le rôle des fichiers dans le projet seront expliqués.
+
+## 1. Les répertoires & fichiers
+
+Dans cette partie, on explique le rôle de chaque répertoire ainsi que les fichiers qui y appartiennent.
+
+### A. *data*
+
+Ce répertoire contient l'ensemble des jeux de données utilisés pour le projet. Voici leurs utilités:
+
+- ***employment.csv***: Le jeu de données sur l'emploi, *Employment by activities (ISIC Rev.4)*.
+- ***obesity.csv***: Le jeu de données sur l'obésité, *Obesity among adults by country, 1975-2016*.
+- ***world-country.json***: Le jeu de données contenant les délimitations de tout les pays du monde, voici la source [ici](https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/world-countries.json). 
+
+### B. *images*
+
+Ce répertoire contient l'ensemble des images pour le projet, mais ces images servent principalement pour la rédaction de ce guide.
+
+### C. *src*
+
+Ce répertoire continent l'ensemble du code du projet. Voici le rôle de chaque fichier:
+
+ - ***process_data.py***: Ce script python sert pour le traitement des données afin que l'on puisse les utiliser proprement.
+ - ***navigation_bar.py***: Ce script python contient le code pour la création de la bar de navigation (fonctionnalités et apparence).
+ - ***paths.py***: Ce script python sert à gérer les accès aux différents fichiers du projet.
+ - ***obesity_page.py***: Ce script python contient le code pour la création de la page *Obesity* (fonctionnalités et apparence).
+ - ***employment_page.py***: Ce script python contient le code pour la création de la page *Employment* (fonctionnalités et apparence).
+ - ***analytics_page.py***: Ce script python contient le code pour la création de la page *Analytics* (fonctionnalités et apparence).
+ - <p><em><b>__init__.py</b></em>: Ce script python n'existe que pour que l'on puisse importer les fonctions/variables des autres scripts locaux au projet.</p>
+
+### D. *app.py*
+
+Ce script python contient le code pour:
+- Exécuter l'application.
+- Créer l'intéractivité entre les différents composants de la page avec les jeux de données. Donc un rôle de serveur.
+
+### E. *requirements.txt*
+
+Ce fichier texte contient les noms des différents packages nécessaires à l'utilisation du projet. 
+  
+Afin de le générer à nouveau si le projet a subi des modifications, il faudra taper une des commandes suivantes:
+
+```shell
+pip3 freeze > requirements.txt
+```
+
+```shell
+pip freeze > requirements.txt
+```
+
+```shell
+python -m pip freeze > requirements.txt
+```
+
+```shell
+python3 -m pip freeze > requirements.txt
+```
+
+### F. *README.md*
+
+Ce fichier *Markdown*, que vous êtes actuellement en train de lire normalement, contient:
+- Présentation du projet
+- Guide utilisateur
+- Guide développeur
+- Rapport d'analyse
+
+## 2. Le code
+
+### A. Script se terminant par [...]_page.py + navigation_bar.py
+
+Ces scripts python sont structurés de la manière suivante:
+
+```python
+"""
+Module pour [rôle du script].
+"""
+
+# Import
+...
+
+# Chargement des données
+...
+
+# Traitement des données
+...
+
+# Les fonctions
+...
+
+# Les variables 
+...
+```
+
+#### - Les *import*
+
+Dans cette section du script, on charge les packages nécessaires pour remplir la fonction du script. Dans ces scripts on a deux types d'*import*:
+- Les *import* de packages:
+
+Dans ce cas on charge les modules de bases (*ex: pandas, numpy ou encore scipy*) comme dans l'exemple suivant:
+```python
+...
+# Import
+import dash
+import dash_bootstrap_components as dbc
+import dash_core_components as dcc
+import dash_html_components as html
+import pandas as pd
+...
+```
+> exemple: *analytics_page.py* 
+
+Ici le mot clé *as* permet d'utiliser un alias pour le packages.
+
+- Les *import* de modules locaux
+
+Dans ce cas on charge les modules locaux, c'est-à-dire les autres scripts au sein du projet. Par exemple dans le script *analytics_page.py*:
+```python
+...
+# Import local
+from src.obesity_page import generate_dropdown
+from src.process_data import process_obesity, process_employment
+from src.paths import employmentPath, obesityPath
+...
+```
+> exemple: *analytics_page.py* 
+
+Ici on charge des fonctions (*generate_dropdown, process_obesity, process_obesity, process_employment*) et des variables (*employmentPath, obesityPath*) provenant des scripts *obesity_page.py*, *process_data.py* et *paths.py*.
+
+#### - Le chargement des données
+
+Dans cette section du script, on récupère les jeux de données nécessaires à utiliser pour le projet. Par exemple:
+
+```python
+...
+# Chargement des donnees
+obesity = pd.read_csv(obesityPath, index_col=0)
+
+with open(countriesPath) as f:
+    countriesGeoJson = json.load(f)
+...
+```
+> exemple: *obesity_page.py* 
+
+Ici on charge les jeux de données *Obesity among adults by country, 1975-2016* et *world-countries.json*.
+
+#### - Le traitement des données
+
+Dans cette section du script, on traite les jeux de données à utiliser pour le projet. Par exemple:
+
+```python
+...
+# Chargement des donnees
+obesity = pd.read_csv(obesityPath, index_col=0)
+...
+# Traitement des donnees
+obesity = process_obesity(obesity)
+...
+```
+> exemple: *obesity_page.py*
+
+Ici après avoir chargé le jeu de données, on utilise la fonction *process_obesity* provenant de *process_data.py*.
+
+#### - Les fonctions
+
+Dans cette section du script, on a la définition de toutes les fonctions. Par exemple:
+
+```python
+...
+# Fonctions pour la page
+def graph_map_obesity(year):
+  ...
+  return mapObesity
+
+def graph_bar_obesity(year):
+  ...
+  return histogramObesity
+...
+```
+> exemple: *obesity_page.py*
+
+#### - Les variables
+
+Dans cette section du script, on a la définition de toutes les variables. Par exemple:
+
+```python
+...
+# Variables pour les elements de la page
+minYear = obesity.year.min()
+maxYear = obesity.year.max()
+dropdown_continents = generate_dropdown(obesity, 'continent')
+dropdown_countries = generate_dropdown(obesity, 'country')
+
+# Selection du type de groupe
+radioitems = dbc.FormGroup(...)
+
+# Page pour obesite
+pageObesity = html.Div([...])
+...
+```
+> exemple: *obesity_page.py*
+
+Ici par exemple la variable *pageObesity* continent l'ensemble de la page *Obesity* c'est-à-dire (les éléments pour l'interaction et les graphiques), et les variables *minYear*, *maxYear*, *dropdown_continents*, *dropdown_countries* et *radioitems* sont utilisés dans *pageObesity*.
+Pour avoir plus d'explication sur la structure de *pageObesity*, c'est [ici](https://dash.plotly.com/layout).
+
+### B. Script paths.py
+
+Ce script s'occupe de définir des variables pour le chemin des jeux de données. Celui-ci utilise le package *os*.
+
+### C. Script process_data.py
+
+Ce script s'occupe du traitement des données, voici sa structure:
+
+```python
+...
+# Imports
+...
+
+# Fonctions complementaires
+...
+
+# Fonctions principales
+def process_obesity(obesity):
+  ...
+def process_employment(employment):
+  ...
+```
+
+- #### Traitement de *obesity* : *process_obesity*
+
+##### - Renommage de certaines variables:
+
+| Anciens noms | Nouveaux noms 
+| --- | --- |
+| Country | country |
+| Year | year |
+| Obesity (%) | obesity |
+| Sex | sex |
+
+##### - Extraction de réels à partir d'une chaine de caractères
+
+La fonction *extract_float(str, index)* permet d'extraire un réel dans une chaîne de caractère à un indice donné. On extrait les réels dans la variable *obesity* anciennement *Obesity (%)* en sachant que les valeurs de cette variable sont des chaînes de caractères dans le format suivant:
+
+\\\(
+S_i = "X_{i,0}[X_{i,1}-X{i,2}]", S_i \in \text{obesity}, X_{i,j} \in \R
+\\\)
+
+Donc:
+\\\(
+\text{ extract\_float}(S_i, 0)  = X_{i,0} \\
+\text{ extract\_float}(S_i, 1)  = X_{i,1} \\
+\text{ extract\_float}(S_i, 2)  = X_{i,2}
+\\\)
+
+##### - Changement des valeurs pour la variable *sex*
+
+| Anciennes valeurs | Nouvelles valeurs 
+| --- | --- |
+| Male | M |
+| Female | F |
+| Both sexes | B |
+
+Pour faire ceci il faut juste extraire la première lettre de la valeur et prendre sa majuscule.
+
+##### - Création de la variable *country_code*
+
+Cette variable sert seulement pour la représentation géolocalisée de l'obésité. Afin de la créer, un package externe est nécessaire. On utilise le package *pycountry_convert*, précisément la fonction *country_name_to_country_alpha2* qui va convertir un pays en son code alpha2 (*ex: France=FR*).
+
+Afin de gérer quelques exceptions, la fonction ***convert_country_to_country_code*** a été créée.
+
+##### - Création de la variable *continent*
+
+On utilise alors les fonctions ***country_name_to_country_alpha2***  et ***country_alpha2_to_continent_code*** du package *pycountry_convert* pour créer la variable *continent* voici les étapes suivies:
+1. Convertir le pays en code alpha2 avec ***country_name_to_country_alpha2*** (*ex: France=FR*) 
+2. Convertir le code alpha2 en continent avec ***country_alpha2_to_continent_code*** (*ex: FR=Europe*)
+3. Affecter cette valeur à la variable *continent*
+  
+Afin de gérer quelques exceptions, la fonction ***convert_country_to_continent*** a été créée.
+
+- #### Traitement de *employment* : *process_employment*
+
+##### - Renommage de certaines variables:
+
+| Anciens noms | Nouveaux noms 
+| --- | --- |
+| LOCATION | country_code |
+| Country | country |
+| Subject | subject |
+| Time | year |
+| Value | value |
+
+##### - Changement des valeurs pour la variable *sex*
+
+| Anciennes valeurs | Nouvelles valeurs 
+| --- | --- |
+| Males | M |
+| Females | F |
+| All persons | B |
+
+
+
+
+
+##### - Changement des valeurs pour la variable *value*
+
+Étant donnée que les valeurs de la variable *value* sont des nombres qui représentent des milliers, on multiple les valeurs de cette colonne par 1 000.
+
+##### - Création de la variable *continent*
+
+Comme pour *obesity*, on va créer la variable continent à partir de *country_code* et la fonction ***convert_country_to_continent*** qui a été créée à l'occasion.
+
 # III. Rapport d'analyse
 
 ## 1. Les données
+
+A partir d'ici on suppose que les données on déjà été traitées, pour plus de détails [ici](#c-script-process_datapy).
 
 ### A. Obesity among adults by country, 1975-2016
 
@@ -244,6 +633,8 @@ Voici la structure du jeu de données post-traitement:
 - La création de la variable **activity** a été faite manuellement à partir de la variable **subject** donc celle-ci reste subjective à notre binôme.
 
 <br>
+
+
 
 ## 2. Observations
 
