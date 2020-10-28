@@ -8,14 +8,14 @@ import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
-import scipy.stats as sc
 import plotly.express as px
 import plotly.graph_objects as go
+import scipy.stats as sc
 
 # Import local
 from src.obesity_page import generate_dropdown
-from src.process_data import process_obesity, process_employment
 from src.paths import employmentPath, obesityPath
+from src.process_data import process_employment, process_obesity
 
 # Chargement des donnees
 analytics = pd.merge(
@@ -90,6 +90,8 @@ def graph_obesity_employment_analytics(country, activity, corr_type="Pearson"):
             size=12,
             color="white"
         ),
+        xaxis=dict(title="Obesity (%)"),
+        yaxis=dict(title="Employees working {}".format( "manually" if activity == 'M' else "in offices" ))
     )
 
     blue = "#3e5a7c"

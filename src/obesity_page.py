@@ -328,7 +328,7 @@ pageObesity = html.Div([
             html.Hr(style={"background-color":"white"}),
 
             # Titre 2
-            html.H5("Year"),
+            html.H5(id="label-year-obesity"),
 
             # Div du slider pour l'annee
             html.Div([

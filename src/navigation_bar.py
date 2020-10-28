@@ -16,6 +16,7 @@ navigationBar = dbc.NavbarSimple(
     brand_href="obesity",
     color=colors['theme'],
     dark=True,
+    sticky="top",
     children=[
         dbc.NavItem(dbc.NavLink("Obesity", href="obesity")),
         dbc.NavItem(dbc.NavLink("Employment", href="employment")),

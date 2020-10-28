@@ -1,9 +1,13 @@
+⚠️ **<ins style="color:red"><span style="color:red">Important:</span></ins>**
+Avant tout, si le nom du document n'est pas README.html alors il est conseillé de lire le README.html car celui-ci permet d'afficher les couleurs dans le rapport d'analyse contrairement au <span>README.md</span>.
+
 # Introduction
+
 
 ![ESIEE Paris](https://upload.wikimedia.org/wikipedia/fr/7/71/Logo_ESIEE_Paris.svg)
 ![Python](https://upload.wikimedia.org/wikipedia/commons/f/f8/Python_logo_and_wordmark.svg)
 > sources: [python](https://upload.wikimedia.org/wikipedia/commons/f/f8/Python_logo_and_wordmark.svg), [ESIEE Paris](https://upload.wikimedia.org/wikipedia/fr/7/71/Logo_ESIEE_Paris.svg)
-
+  
 Dans le cadre du module "*Python pour la datascience*" (**DSIA-4101A**), nous avons eu l'opportunité de créer un dashboard liant les compétences acquises grâce ce module avec notre créativité. Le projet se réalisa en binôme et l'objectif fut de fournir une représentation intéractive (dashboard) d'un jeu de données accessibles publiquement et non modifiées.  
 
 Notre responsable:
@@ -128,7 +132,7 @@ Lancez un invité de commande/cmd/powershell puis rendez-vous au niveau du dossi
 ```shell
 > cd [Le chemin menant au dossier]
 > ls
-README.md     app.py     data     src
+README.md     main.py     data     src
 requirements.txt
 ```
 
@@ -141,23 +145,23 @@ Lancez un terminal/invité de commandes/console au niveau du projet:
 ```bash
 $ cd [Le chemin menant au dossier]
 $ ls
-README.md     app.py     data     src
+README.md     main.py     data     src
 requirements.txt
 ```
 Il faudra bien-sûr remplacer le "*[Le chemin menant au dossier]*" par le chemin réel sur votre appareil. Si vous ne vous retrouvez pas avec le même affichage alors vérifiez si vous êtes bien dans le bon dossier ou non sinon jusqu'à là c'est bon.  
 
 Une fois que vous avez le même affichage, lancez une des commandes suivantes afin de lancer l'application:
 ```bash
-$ python3 app.py
+$ python3 main.py
 ```
 Ou
 ```bash
-$ python app.py
+$ python main.py
 ```
 
 Si tout se passe bien alors vous aurez cette affichage:
 ```bash
-$ python3 app.py
+$ python3 main.py
 Dash is running on http://127.0.0.1:8050/
 
  * Serving Flask app "app" (lazy loading)
@@ -272,7 +276,7 @@ Ce répertoire continent l'ensemble du code du projet. Voici le rôle de chaque 
  - ***analytics_page.py***: Ce script python contient le code pour la création de la page *Analytics* (fonctionnalités et apparence).
  - <p><em><b>__init__.py</b></em>: Ce script python n'existe que pour que l'on puisse importer les fonctions/variables des autres scripts locaux au projet.</p>
 
-### D. *app.py*
+### D. *main.py*
 
 Ce script python contient le code pour:
 - Exécuter l'application.
@@ -601,7 +605,7 @@ Dans ce jeu de données on retrouve le nombre d'employés selon des activités �
 6. Wholesale and retail trade; repair of motor vehicles and motorcycles
 7. Transportation and storage
 8. Accommodation and food service activities
-9.  Information and communication
+9. Information and communication
 10. Financial and insurance activities
 11. Real estate activities
 12. Professional, scientific and technical activities
@@ -710,22 +714,24 @@ Malgré le fait que nos jeux de données soient chacunes assez complètes, elles
   - En abscisse, les pays
   - En ordonnée, le type d'activité (*Desk: Bureautique, Manual: Manuel*)
   - Les carrés représentent la correlation entre l'obésité et le nombre d'employés dans le type d'activité. La couleur des carrés est interprété de la manière suivante:
-    - Plus le carré se rapproche du **<span style="color:blue">bleu</span>**, donc de la valeur **<span style="color:blue">1</span>**, alors correlation est positive. Cela signifie que **<span style="color:blue">l'obésité et le type d'activité peuvent être représentés par une fonction croissante</span>**.
-    - Plus le carré se rapproche du **<span style="color:red">rouge</span>**, donc de la valeur **<span style="color:red">-1</span>**, alors correlation est positive. Cela signifie que **<span style="color:red">l'obésité et le type d'activités peuvent être représenté par une fonction décroissante</span>**.
+    - Plus la couleur du carré se rapproche du **<span style="color:blue">bleu</span>** 🔵, donc de la valeur **<span style="color:blue">1</span>**, alors correlation est positive. Cela signifie que **<span style="color:blue">l'obésité et le type d'activité peuvent être représentés par une fonction croissante</span>**.
+    - Plus la couleur du carré se rapproche du **<span style="color:red">rouge</span>** 🔴, donc de la valeur **<span style="color:red">-1</span>**, alors correlation est positive. Cela signifie que **<span style="color:red">l'obésité et le type d'activités peuvent être représenté par une fonction décroissante</span>**.
   - Par exemple pour la France:
-    - **Desk/Obesity** en bleu implique que **<span style="color:blue">le pourcentage d'obesité augmente lorsque le nombre d'employés dans les bureaux augmente</span>**.
-    - **Manual/Obesity** en rouge implique que **<span style="color:red">le pourcentage d'obesité baisse lorsque le nombre d'employés travaillant manuellement augmente</span>**.
+    - 🔵 **Desk/Obesity** en bleu implique que **<span style="color:blue">le pourcentage d'obesité augmente lorsque le nombre d'employés dans les bureaux augmente</span>**.
+    - 🔴 **Manual/Obesity** en rouge implique que **<span style="color:red">le pourcentage d'obesité baisse lorsque le nombre d'employés travaillant manuellement augmente</span>**.
   
+```diff
+```
 <br>
 
 - <ins>Observations:</ins>
-  - **<span style="color:blue">Desk</span> <span style="color:red">Manual</span>**: <b>14 pays</b> (*Denmark, Finland, France, Hungary, Ireland, Italy, Japan, Latvia, Lithuania, Netherlands, Poland, Portugal, Slovenia, Sweden*)
-  - **<span style="color:blue">Desk</span> <span style="color:blue">Manual</span>**: <b>16 pays</b> (*Australia, Austria, Belgium, Chile, Colombia, Costa Rica, Estonia, Germany, Iceland, Israel, Luxembourg, Mexico, New Zealand, Norway, Switzerland, Turkey*)
-  - **<span style="color:red">Desk</span> <span style="color:red">Manual</span>**: <b>2 pays</b> (*Greece, Spain*)
+  - **<span style="color:blue">Desk</span>🔵 <span style="color:red">Manual</span>** 🔴: <b>14 pays</b> (*Denmark, Finland, France, Hungary, Ireland, Italy, Japan, Latvia, Lithuania, Netherlands, Poland, Portugal, Slovenia, Sweden*)
+  - **<span style="color:blue">Desk</span>🔵 <span style="color:blue">Manual</span>** 🔵: <b>16 pays</b> (*Australia, Austria, Belgium, Chile, Colombia, Costa Rica, Estonia, Germany, Iceland, Israel, Luxembourg, Mexico, New Zealand, Norway, Switzerland, Turkey*)
+  - **<span style="color:red">Desk</span>🔴 <span style="color:red">Manual</span>** 🔴: <b>2 pays</b> (*Greece, Spain*)
 - <ins>Hypothèses:</ins>
-  - Pour les pays en **<span style="color:blue">Desk</span> <span style="color:red">Manual</span>** sont les pays qui ont tendance à moins recruter dans les métiers manuels mais plus dans les métiers bureautiques.
-  -  Pour les pays en **<span style="color:blue">Desk</span> <span style="color:blue">Manual</span>** sont les pays qui recrutent dans les métiers manuels et bureautiques.
-  - Pour les pays en **<span style="color:red">Desk</span> <span style="color:red">Manual</span>** sont les pays qui sont possiblement en crise.
+  - Pour les pays en **<span style="color:blue">Desk</span>🔵 <span style="color:red">Manual</span>** 🔴 sont les pays qui ont tendance à moins recruter dans les métiers manuels mais plus dans les métiers bureautiques.
+  -  Pour les pays en **<span style="color:blue">Desk</span>🔵 <span style="color:blue">Manual</span>** 🔵 sont les pays qui recrutent dans les métiers manuels et bureautiques.
+  - Pour les pays en **<span style="color:red">Desk</span>🔴 <span style="color:red">Manual</span>** 🔴 sont les pays qui sont possiblement en crise.
 
 <br>
 
@@ -735,4 +741,4 @@ En combinant nos jeux de données, on a découvert **3 groupes de pays qui prés
 
 ## 3. Conclusion
 
-On peut dire qu'il existe un lien entre les emplois manuels/bureautiques et l'obésité.
+En conclusion on peut dire qu'il existe un lien entre l'obésité et la croissance des emplois en bureaux. Cependant ce lien n'est pas présent pour tous les pays car cela dépendant aussi de leur situation économique, politique <sup>et</sup>/<sub>ou </sub>démographique.

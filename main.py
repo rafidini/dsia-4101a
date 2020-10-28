@@ -14,8 +14,10 @@ from src.analytics_page import (correlation_alert_component_analytics,
                                 graph_obesity_employment_analytics,
                                 heatmap_obesity_employment_analytics,
                                 lineplot_graph, pageAnalytics)
-from src.employment_page import pageEmployment
-
+from src.employment_page import (graph_line_desktop_manual_country_range,
+                                 graph_line_subjects_country_range,
+                                 graph_pie_subjects_country_year,
+                                 pageEmployment)
 from src.navigation_bar import navigationBar
 from src.obesity_page import (dropdown_continents, dropdown_countries,
                               graph_bar_obesity, graph_line_obesity_group,
@@ -57,11 +59,12 @@ if __name__ == '__main__':
     # OBESITY - Interactivite: Changement d'annee sur la page 'obesity'
     @app.callback(
         [dash.dependencies.Output('graph-bar-obesity', 'figure'),
-        dash.dependencies.Output('graph-map-obesity', 'figure')],
+        dash.dependencies.Output('graph-map-obesity', 'figure'),
+        dash.dependencies.Output('label-year-obesity', 'children')],
         [dash.dependencies.Input('dropdown-obesity-year', 'value')]
     )
     def change_year(year):
-        return [graph_bar_obesity(year), graph_map_obesity(year)]
+        return [graph_bar_obesity(year), graph_map_obesity(year), "Year {}".format(year)]
 
     # OBESITY - Interactivite: Choix de groupe/region
     @app.callback(
@@ -86,7 +89,6 @@ if __name__ == '__main__':
             return not is_open, location
 
         return is_open, None
-
 
     # OBESITY - Interactivite: Ouverture fenetre pour region specifique bis
     @app.callback(
@@ -130,6 +132,27 @@ if __name__ == '__main__':
         ranktxt =  "\n among " + ("countries" if group_type == "Countries" else "continents")
 
         return "During the year {}".format(value), graph_pie_obesity_group(value, group_type, location), "{}/{}".format(rank, n), ranktxt
+
+    # EMPLOYMENT - Interactivite: Creation du graphique stacked area des activites, camembert des activites, lineplot
+    # des types d'activite (bureautique ou manuel)
+    @app.callback(
+        [dash.dependencies.Output("lineplot-subjects-employment", "figure"),
+        dash.dependencies.Output("piecharts-subjects-employment", "figure"),
+        dash.dependencies.Output("label-year-piechart-employment", "children"),
+        dash.dependencies.Output("lineplot-activity-employment", "figure")],
+        [dash.dependencies.Input("input-country-employment", "value"),
+        dash.dependencies.Input("input-range-year-employment", "value"),
+        dash.dependencies.Input("input-sex-employment", "value"),
+        dash.dependencies.Input("input-activity-employment", "value"),
+        dash.dependencies.Input("input-year-employment", "value")]
+    )
+    def update_inputs_employment(country, year_range, sex, activity_type, year):
+        return [
+            graph_line_subjects_country_range(year_range[0], year_range[1], country, activity_type, sex),
+            graph_pie_subjects_country_year(year, country, activity_type, sex),
+            "You selected the year {}".format(year),
+            graph_line_desktop_manual_country_range(year_range[0], year_range[1], country)
+        ]
 
     # ANALYTICS - Interactivite: Creation du graphique lineplot, de la correlation de l'obesite par rapport aux activites
     # bureautiques ou manuelles
