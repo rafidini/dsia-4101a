@@ -1,0 +1,1244 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/itokiana/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.13/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="introduction">Introduction</h1>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/fr/7/71/Logo_ESIEE_Paris.svg" alt="ESIEE Paris"><br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Python_logo_and_wordmark.svg" alt="Python"></p>
+<blockquote>
+<p>sources: <a href="https://upload.wikimedia.org/wikipedia/commons/f/f8/Python_logo_and_wordmark.svg">python</a>, <a href="https://upload.wikimedia.org/wikipedia/fr/7/71/Logo_ESIEE_Paris.svg">ESIEE Paris</a></p>
+</blockquote>
+<p>Dans le cadre du module &quot;<em>Python pour la datascience</em>&quot; (<strong>DSIA-4101A</strong>), nous avons eu l&apos;opportunit&#xE9; de cr&#xE9;er un dashboard liant les comp&#xE9;tences acquises gr&#xE2;ce ce module avec notre cr&#xE9;ativit&#xE9;. Le projet se r&#xE9;alisa en bin&#xF4;me et l&apos;objectif fut de fournir une repr&#xE9;sentation int&#xE9;ractive (dashboard) d&apos;un jeu de donn&#xE9;es accessibles publiquement et non modifi&#xE9;es.</p>
+<p>Notre responsable:</p>
+<ul>
+<li><strong>COURIVAUD Daniel</strong></li>
+</ul>
+<p>Notre bin&#xF4;me est compos&#xE9; de:</p>
+<ul>
+<li><strong>RAFIDINARIVO Itokiana</strong></li>
+<li><strong>FONTA Romain</strong></li>
+</ul>
+<p>Et nos jeux de donn&#xE9;es sont:</p>
+<ul>
+<li><em><a href="https://www.kaggle.com/amanarora/obesity-among-adults-by-country-19752016">Obesity among adults by country, 1975-2016</a></em>
+<blockquote>
+<p><em>source: Kaggle</em></p>
+</blockquote>
+</li>
+<li><em><a href="https://stats.oecd.org/Index.aspx?QueryId=3491">Employment by activities (ISIC Rev.4)</a></em>
+<blockquote>
+<p><em>source: OECD Stats</em></p>
+</blockquote>
+</li>
+</ul>
+<h4 class="mume-header" id="probl%C3%A9matique">Probl&#xE9;matique</h4>
+
+<p>Alors notre bin&#xF4;me s&apos;est demand&#xE9;: <ins><em>Existe t&apos;il un lien entre l&apos;obesit&#xE9; et les emplois bureautiques <sup>et</sup>/<sub>ou</sub> manuels?</em></ins></p>
+<br>
+<hr>
+<h1 class="mume-header" id="table-des-mati%C3%A8res">Table des mati&#xE8;res</h1>
+
+<p><a href="_TOC_.md">_TOC_</a></p>
+<hr>
+<h1 class="mume-header" id="i-guide-utilisateur">I. Guide utilisateur</h1>
+
+<h2 class="mume-header" id="1-installation-t%C3%A9l%C3%A9chargement">1. Installation &amp; T&#xE9;l&#xE9;chargement</h2>
+
+<h3 class="mume-header" id="a-python-3xx">A. Python (3.X.X)</h3>
+
+<p>Dans un premier temps, afin d&apos;utiliser notre projet il faudra poss&#xE9;der <em><strong>Python v3.X.X</strong></em> sur votre appareil. Pour cela, que votre appareil soit sous Linux, macOS, Windows ou autre, rendez vous la page de t&#xE9;l&#xE9;chargement de Python en cliquant <a href="https://www.python.org/downloads/">ici</a>. Puis suivez les instructions lors de l&apos;installation.</p>
+<p>Apr&#xE8;s l&apos;installation, v&#xE9;rifiez que <em><strong>Python v3.X.X</strong></em> est bien install&#xE9; sur votre appareil en tapant les commandes suivantes sur le Terminal, Invit&#xE9; de commandes, PowerShell ou autre selon votre syst&#xE8;me d&apos;exploitation:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ python3 --version
+Python 3.X.X
+</pre><p>Ou</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ python --version
+Python 3.X.X
+</pre><p>Dans le cas o&#xF9; vous avez ce r&#xE9;sultat:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">Python 2.X.X
+</pre><p>Alors reinstallez une version 3.X.X de Python.</p>
+<h3 class="mume-header" id="b-pippip3">B. <em>pip</em>/<em>pip3</em></h3>
+
+<p>Dans un second temps, installer Python ne suffit pas. Le projet utilise diff&#xE9;rents &quot;<em>packages</em>&quot; qui ne sont pas disponibles automatiquement avec <em><strong>Python</strong></em> alors il faudra installer <em>pip</em>.</p>
+<p><em>pip</em> n&apos;a pas besoin d&apos;&#xEA;tre install&#xE9; si la version est:</p>
+<ul>
+<li>Python 2.X.X &gt;= <strong>2.7.9</strong></li>
+<li>Python 3.X.X &gt;= <strong>3.4</strong></li>
+</ul>
+<p>Sinon voici un lien pour le t&#xE9;l&#xE9;charger <a href="https://pip.pypa.io/en/stable/installing/">ici</a>.</p>
+<h3 class="mume-header" id="c-le-dashboard">C. Le dashboard</h3>
+
+<h4 class="mume-header" id="t%C3%A9l%C3%A9charger-le-projet">T&#xE9;l&#xE9;charger le projet</h4>
+
+<p>Le projet est t&#xE9;l&#xE9;chargeable sur le la page suivante <a href="https://git.esiee.fr/rafidini/dsia-4101a">ici</a>. Celui-ci pourra &#xEA;tre utilis&#xE9; comme un &quot;Git Repository&quot;, en &quot;<em>forkant</em>&quot; le projet, ou comme un projet dossier normal, en &quot;<em>clonant</em>&quot; le projet sur votre ordinateur.</p>
+<h4 class="mume-header" id="packages-n%C3%A9cessaires">Packages n&#xE9;cessaires</h4>
+
+<p>Pour que le projet marche comme il faut, des packages suppl&#xE9;mentaires sont n&#xE9;cessaires. Le nom de ces packages sont disponibles dans le fichier <em>requirements.txt</em>:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token punctuation">..</span>.
+dash<span class="token operator">==</span>1.16.0
+dash-bootstrap-components<span class="token operator">==</span>0.10.6
+dash-core-components<span class="token operator">==</span>1.12.0
+dash-html-components<span class="token operator">==</span>1.1.1
+dash-renderer<span class="token operator">==</span>1.8.0
+dash-table<span class="token operator">==</span>4.10.1
+decorator<span class="token operator">==</span>4.4.2
+defusedxml<span class="token operator">==</span>0.6.0
+descartes<span class="token operator">==</span>1.1.0
+entrypoints<span class="token operator">==</span>0.3
+<span class="token punctuation">..</span>.
+</pre><p>Afin de les t&#xE9;l&#xE9;charger/installer voici les commandes possibles en fonction de votre configuration:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">pip <span class="token function">install</span> -r requirements.txt
+</pre><pre data-role="codeBlock" data-info="bash" class="language-bash">pip3 <span class="token function">install</span> -r requirements.txt
+</pre><pre data-role="codeBlock" data-info="bash" class="language-bash">python -m pip <span class="token function">install</span> -r requirements.txt
+</pre><pre data-role="codeBlock" data-info="bash" class="language-bash">python3 -m pip <span class="token function">install</span> -r requirements.txt
+</pre><h2 class="mume-header" id="2-ex%C3%A9cution">2. Ex&#xE9;cution</h2>
+
+<h3 class="mume-header" id="a-windows">A. Windows</h3>
+
+<p>Lancez un invit&#xE9; de commande/cmd/powershell puis rendez-vous au niveau du dossier du projet:</p>
+<ul>
+<li>Sous CMD</li>
+</ul>
+<pre data-role="codeBlock" data-info="shell" class="language-shell"><span class="token operator">&gt;</span> CD <span class="token punctuation">[</span>Le chemin menant au dossier<span class="token punctuation">]</span>
+<span class="token operator">&gt;</span> DIR
+<span class="token punctuation">..</span>.
+</pre><ul>
+<li>Sous powershell</li>
+</ul>
+<pre data-role="codeBlock" data-info="shell" class="language-shell"><span class="token operator">&gt;</span> <span class="token function">cd</span> <span class="token punctuation">[</span>Le chemin menant au dossier<span class="token punctuation">]</span>
+<span class="token operator">&gt;</span> <span class="token function">ls</span>
+README.md     main.py     data     src
+requirements.txt
+</pre><p>Il faudra bien-s&#xFB;r remplacer le &quot;<em>[Le chemin menant au dossier]</em>&quot; par le chemin r&#xE9;el sur votre appareil. Si vous ne vous retrouvez pas avec un affichage a peu pr&#xE8;s similaire alors v&#xE9;rifiez si vous &#xEA;tes bien dans le bon dossier ou non sinon jusqu&apos;&#xE0; l&#xE0; c&apos;est bon.</p>
+<p>Une fois que vous avez le m&#xEA;me affichage, lancez une des commandes suivantes afin de lancer l&apos;application:</p>
+<h3 class="mume-header" id="b-linux-macos">B. Linux &amp; macOS</h3>
+
+<p>Lancez un terminal/invit&#xE9; de commandes/console au niveau du projet:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ <span class="token function">cd</span> <span class="token punctuation">[</span>Le chemin menant au dossier<span class="token punctuation">]</span>
+$ <span class="token function">ls</span>
+README.md     main.py     data     src
+requirements.txt
+</pre><p>Il faudra bien-s&#xFB;r remplacer le &quot;<em>[Le chemin menant au dossier]</em>&quot; par le chemin r&#xE9;el sur votre appareil. Si vous ne vous retrouvez pas avec le m&#xEA;me affichage alors v&#xE9;rifiez si vous &#xEA;tes bien dans le bon dossier ou non sinon jusqu&apos;&#xE0; l&#xE0; c&apos;est bon.</p>
+<p>Une fois que vous avez le m&#xEA;me affichage, lancez une des commandes suivantes afin de lancer l&apos;application:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ python3 main.py
+</pre><p>Ou</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ python main.py
+</pre><p>Si tout se passe bien alors vous aurez cette affichage:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">$ python3 main.py
+Dash is running on http://127.0.0.1:8050/
+
+ * Serving Flask app <span class="token string">&quot;app&quot;</span> <span class="token punctuation">(</span>lazy loading<span class="token punctuation">)</span>
+ * Environment: production
+   WARNING: This is a development server. Do not use it <span class="token keyword">in</span> a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+</pre><h2 class="mume-header" id="3-utilisation">3. Utilisation</h2>
+
+<p>Une fois &#xE9;x&#xE9;cut&#xE9;, le &quot;<em>dashboard</em>&quot; est accessible &#xE0; l&apos;adresse <a href="http://127.0.0.1:8050/">http://127.0.0.1:8050/</a>.</p>
+<h3 class="mume-header" id="a-bar-de-navigation">A. Bar de navigation</h3>
+
+<p><img src="images/utilisation/navigation_bar.png" alt="navigation_bar.png"></p>
+<p>Pour d&apos;acc&#xE9;der aux diff&#xE9;rentes pages propos&#xE9;es par l&apos;application il y a la bar de navigation (ci-dessus). L&apos;application propose 3 pages:</p>
+<ul>
+<li><em>Obesity</em></li>
+<li><em>Employment</em></li>
+<li><em>Analytics</em><br>
+Tous sont accessibles en cliquant sur le label correspondant &#xE0; la page &#xE0; droite de la bar de navigation.</li>
+</ul>
+<h3 class="mume-header" id="b-page-obesity">B. Page <em>Obesity</em></h3>
+
+<p>Lorsque l&apos;installation et l&apos;&#xE9;xecution ont bien &#xE9;t&#xE9; resp&#xE9;ct&#xE9;s alors on se retrouve sur la page suivante:</p>
+<p><img src="images/utilisation/page_obesity_main.png" alt="page_obesity_main.png"></p>
+<p>Sur cette page, <em>Obesity</em>,  on utilise le jeu de donn&#xE9;es <em>Obesity among adults by country, 1975-2016</em>.</p>
+<ul>
+<li>
+<h4>Fen&#xEA;tre principale</h4>
+</li>
+</ul>
+<p><img src="images/utilisation/page_obesity_main_interaction.gif" alt="page_obesity_main_interaction.gif"></p>
+<p>La page permet d&apos;int&#xE9;ragir avec la carte du monde et l&apos;histogramme situ&#xE9;s du c&#xF4;t&#xE9; droit de la page &#xE0; partir du &quot;<em>slider</em>&quot; situ&#xE9; en haut &#xE0; gauche afin de d&#xE9;filer les ann&#xE9;es. Cela permet de voir la progression du pourcentage d&apos;obesit&#xE9; sur une repr&#xE9;sentation g&#xE9;olocalis&#xE9;e et la distribution de celle-ci au cours des ann&#xE9;es.</p>
+<ul>
+<li>
+<h4>Fen&#xEA;tre secondaire</h4>
+</li>
+</ul>
+<p>La fen&#xEA;tre secondaire est une fen&#xEA;tre sur laquelle on peut avoir plus d&apos;information sur une r&#xE9;gion sp&#xE9;cifique, c&apos;est-&#xE0;-dire un pays ou un continent. Celle-ci appara&#xEE;t lorsque que l&apos;on appuie sur le bouton &quot;<em>Submit</em>&quot; apr&#xE8;s avoir choisi la r&#xE9;gion ou lorsque l&apos;on change de pays/continent. Voici deux examples:</p>
+<p><img src="images/utilisation/page_obesity_open_country.gif" alt="page_obesity_open_country.gif"></p>
+<blockquote>
+<p>Apparition de la fen&#xEA;tre secondaire pour un pays sp&#xE9;cifique</p>
+</blockquote>
+<br>
+<p><img src="images/utilisation/page_obesity_open_continent.gif" alt="page_obesity_open_continent.gif"></p>
+<blockquote>
+<p>Apparition de la fen&#xEA;tre secondaire pour un continent sp&#xE9;cifique</p>
+</blockquote>
+<br>
+<p><strong>Mais ducoup qu&apos;est-ce que l&apos;on peut faire sur cette fen&#xEA;tre secondaire?</strong></p>
+<ul>
+<li>Changer l&apos;intervalle pour int&#xE9;rargir avec le graphique repr&#xE9;sentant l&apos;&#xE9;volution du pourcentage d&apos;ob&#xE9;sit&#xE9; par sex.</li>
+</ul>
+<img src="images/utilisation/page_obesity_secondary_lineplot.gif" alt="drawing" height="400">
+<ul>
+<li>Changer l&apos;ann&#xE9;e pour int&#xE9;ragir avec:
+<ul>
+<li>Le camembert repr&#xE9;sentant le part de personnes ob&#xE8;ses et non ob&#xE8;ses au sein de la r&#xE9;gion.</li>
+<li>Le rang de la r&#xE9;gion par rapport aux autres (<em>ex: un pays sera compar&#xE9; &#xE0; tout les autres pays du monde, un continent sera compar&#xE9; aux autres continents</em>). Ce rang est d&#xE9;finit tel que plus le rang est petit, plus faible est le pourcentage d&apos;ob&#xE9;sit&#xE9; et r&#xE9;ciproquement plus le rang est grand, plus &#xE9;lev&#xE9; est le pourcentage d&apos;ob&#xE9;sit&#xE9;.</li>
+</ul>
+</li>
+</ul>
+<img src="images/utilisation/page_obesity_secondary_piechart.gif" alt="drawing" height="400">
+<br>
+<p>Et bien s&#xFB;r pour quitter la fen&#xEA;tre secondaire il suffit de cliquer sur le bouton rouge &quot;<span style="color:red"><b>Close</b></span>&quot;.</p>
+<h3 class="mume-header" id="c-page-employment">C. Page <em>Employment</em></h3>
+
+<p><img src="images/utilisation/page_employment_main.png" alt="page_employment_main.png"></p>
+<p>Sur cette page, <em>Employment</em>, on utilise le jeu de donn&#xE9;es <em>Employment by activities (ISIC Rev.4)</em>.</p>
+<ul>
+<li>
+<h4>Menu</h4>
+</li>
+</ul>
+<p><img src="images/utilisation/page_employment_menu.png" alt="page_employment_menu.png"></p>
+<p>Cet &#xE9;l&#xE9;ment de la page permet de contr&#xF4;ler les diff&#xE9;rents graphiques pr&#xE9;sents sur la page. Ce menu permet de modifier les variables suivantes:</p>
+<ul>
+<li>
+<p><em>Country</em>: Pays</p>
+</li>
+<li>
+<p><em>Year range</em>: interval temporel (ann&#xE9;es)</p>
+</li>
+<li>
+<p><em>Sex</em>: Sexe</p>
+</li>
+<li>
+<p><em>Activity type</em>: Type d&apos;activit&#xE9;, bureautique ou manuel</p>
+</li>
+<li>
+<h4>Graphique: Evolution des secteurs d&apos;activit&#xE9;s au cours du temps</h4>
+</li>
+</ul>
+<p><img src="images/utilisation/page_employment_lineplot1.gif" alt="page_employment_lineplot1.gif"></p>
+<p>Ce graphique montre l&apos;&#xE9;volution des activit&#xE9;s d&apos;un secteur (bureautique ou manuel) dans un interval temporel pour un pays et un sexe donn&#xE9;. Chaque couche repr&#xE9;sente une activit&#xE9;, l&apos;abscisse repr&#xE9;sente les ann&#xE9;es et l&apos;ordonn&#xE9;e le nombre d&apos;employ&#xE9;s.</p>
+<ul>
+<li>
+<h4>Graphique: R&#xE9;partition des secteurs d&apos;activit&#xE9;s</h4>
+</li>
+</ul>
+<p><img src="images/utilisation/page_employment_piechart.gif" alt="page_employment_piechart.gif"></p>
+<p>Ce graphique montre la r&#xE9;partition des employ&#xE9;s dans un secteur d&apos;activit&#xE9;s (bureautique ou manuel) au cours d&apos;un ann&#xE9;e sp&#xE9;cifique (control&#xE9;e avec le slider situ&#xE9; en en dessous du graphique) pour un pays et un sex donn&#xE9;.</p>
+<ul>
+<li>
+<h4>Graphique: Evolution des emplois bureautiques et manuels</h4>
+</li>
+</ul>
+<p><img src="images/utilisation/page_employment_lineplot2.gif" alt="page_employment_lineplot2.gif"></p>
+<p>Ce graphique montre l&apos;&#xE9;volution des deux secteurs d&apos;activit&#xE9;s dans un interval temporel donn&#xE9;. En ordonn&#xE9;e, on a le nombre d&apos;employ&#xE9;s et en abscisse les ann&#xE9;es.</p>
+<h3 class="mume-header" id="d-page-analytics">D. Page <em>Analytics</em></h3>
+
+<p><img src="images/utilisation/page_analytics_main.png" alt="page_analytics_main.png"></p>
+<p>Sur cette page, <em>Analytics</em>, on utilise les deux jeux de donn&#xE9;es combin&#xE9;s en un seul et on utilisera 2 types de graphiques pour 3 types de correlation diff&#xE9;rentes.</p>
+<ul>
+<li>
+<h4>Correlation par pays</h4>
+</li>
+</ul>
+<p><img src="images/utilisation/page_analytics_lineplot_interaction.gif" alt="page_analytics_lineplot_interaction.gif"></p>
+<ul>
+<li>
+<h4>&quot;Carte de chaleur&quot;</h4>
+</li>
+</ul>
+<p><img src="images/utilisation/page_analytics_heatmap_interaction.gif" alt="page_analytics_heatmap_interaction.gif"></p>
+<h1 class="mume-header" id="ii-guide-d%C3%A9veloppeur">II. Guide d&#xE9;veloppeur</h1>
+
+<p>Dans ce guide d&#xE9;veloppeur la structure, le code des scripts python et le r&#xF4;le des fichiers dans le projet seront expliqu&#xE9;s.</p>
+<h2 class="mume-header" id="1-les-r%C3%A9pertoires-fichiers">1. Les r&#xE9;pertoires &amp; fichiers</h2>
+
+<p>Dans cette partie, on explique le r&#xF4;le de chaque r&#xE9;pertoire ainsi que les fichiers qui y appartiennent.</p>
+<h3 class="mume-header" id="a-data">A. <em>data</em></h3>
+
+<p>Ce r&#xE9;pertoire contient l&apos;ensemble des jeux de donn&#xE9;es utilis&#xE9;s pour le projet. Voici leurs utilit&#xE9;s:</p>
+<ul>
+<li><em><strong>employment.csv</strong></em>: Le jeu de donn&#xE9;es sur l&apos;emploi, <em>Employment by activities (ISIC Rev.4)</em>.</li>
+<li><em><strong>obesity.csv</strong></em>: Le jeu de donn&#xE9;es sur l&apos;ob&#xE9;sit&#xE9;, <em>Obesity among adults by country, 1975-2016</em>.</li>
+<li><em><strong>world-country.json</strong></em>: Le jeu de donn&#xE9;es contenant les d&#xE9;limitations de tout les pays du monde, voici la source <a href="https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/world-countries.json">ici</a>.</li>
+</ul>
+<h3 class="mume-header" id="b-images">B. <em>images</em></h3>
+
+<p>Ce r&#xE9;pertoire contient l&apos;ensemble des images pour le projet, mais ces images servent principalement pour la r&#xE9;daction de ce guide.</p>
+<h3 class="mume-header" id="c-src">C. <em>src</em></h3>
+
+<p>Ce r&#xE9;pertoire continent l&apos;ensemble du code du projet. Voici le r&#xF4;le de chaque fichier:</p>
+<ul>
+<li><em><strong>process_data.py</strong></em>: Ce script python sert pour le traitement des donn&#xE9;es afin que l&apos;on puisse les utiliser proprement.</li>
+<li><em><strong>navigation_bar.py</strong></em>: Ce script python contient le code pour la cr&#xE9;ation de la bar de navigation (fonctionnalit&#xE9;s et apparence).</li>
+<li><em><strong><a href="http://paths.py">paths.py</a></strong></em>: Ce script python sert &#xE0; g&#xE9;rer les acc&#xE8;s aux diff&#xE9;rents fichiers du projet.</li>
+<li><em><strong>obesity_page.py</strong></em>: Ce script python contient le code pour la cr&#xE9;ation de la page <em>Obesity</em> (fonctionnalit&#xE9;s et apparence).</li>
+<li><em><strong>employment_page.py</strong></em>: Ce script python contient le code pour la cr&#xE9;ation de la page <em>Employment</em> (fonctionnalit&#xE9;s et apparence).</li>
+<li><em><strong>analytics_page.py</strong></em>: Ce script python contient le code pour la cr&#xE9;ation de la page <em>Analytics</em> (fonctionnalit&#xE9;s et apparence).</li>
+<li>
+<p><em><b>__init__.py</b></em>: Ce script python n&apos;existe que pour que l&apos;on puisse importer les fonctions/variables des autres scripts locaux au projet.</p>
+</li>
+</ul>
+<h3 class="mume-header" id="d-mainpy">D. <em><a href="http://main.py">main.py</a></em></h3>
+
+<p>Ce script python contient le code pour:</p>
+<ul>
+<li>Ex&#xE9;cuter l&apos;application.</li>
+<li>Cr&#xE9;er l&apos;int&#xE9;ractivit&#xE9; entre les diff&#xE9;rents composants de la page avec les jeux de donn&#xE9;es. Donc un r&#xF4;le de serveur.</li>
+</ul>
+<h3 class="mume-header" id="e-requirementstxt">E. <em>requirements.txt</em></h3>
+
+<p>Ce fichier texte contient les noms des diff&#xE9;rents packages n&#xE9;cessaires &#xE0; l&apos;utilisation du projet.</p>
+<p>Afin de le g&#xE9;n&#xE9;rer &#xE0; nouveau si le projet a subi des modifications, il faudra taper une des commandes suivantes:</p>
+<pre data-role="codeBlock" data-info="shell" class="language-shell">pip3 freeze <span class="token operator">&gt;</span> requirements.txt
+</pre><pre data-role="codeBlock" data-info="shell" class="language-shell">pip freeze <span class="token operator">&gt;</span> requirements.txt
+</pre><pre data-role="codeBlock" data-info="shell" class="language-shell">python -m pip freeze <span class="token operator">&gt;</span> requirements.txt
+</pre><pre data-role="codeBlock" data-info="shell" class="language-shell">python3 -m pip freeze <span class="token operator">&gt;</span> requirements.txt
+</pre><h3 class="mume-header" id="f-readmemd">F. <em><a href="http://README.md">README.md</a></em></h3>
+
+<p>Ce fichier <em>Markdown</em>, que vous &#xEA;tes actuellement en train de lire normalement, contient:</p>
+<ul>
+<li>Pr&#xE9;sentation du projet</li>
+<li>Guide utilisateur</li>
+<li>Guide d&#xE9;veloppeur</li>
+<li>Rapport d&apos;analyse</li>
+</ul>
+<h2 class="mume-header" id="2-le-code">2. Le code</h2>
+
+<h3 class="mume-header" id="a-script-se-terminant-par-_pagepy-navigation_barpy">A. Script se terminant par [...]_page.py + navigation_bar.py</h3>
+
+<p>Ces scripts python sont structur&#xE9;s de la mani&#xE8;re suivante:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token triple-quoted-string string">&quot;&quot;&quot;
+Module pour [r&#xF4;le du script].
+&quot;&quot;&quot;</span>
+
+<span class="token comment"># Import</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token comment"># Chargement des donn&#xE9;es</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token comment"># Traitement des donn&#xE9;es</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token comment"># Les fonctions</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token comment"># Les variables </span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</pre><h4 class="mume-header" id="-les-import">- Les <em>import</em></h4>
+
+<p>Dans cette section du script, on charge les packages n&#xE9;cessaires pour remplir la fonction du script. Dans ces scripts on a deux types d&apos;<em>import</em>:</p>
+<ul>
+<li>Les <em>import</em> de packages:</li>
+</ul>
+<p>Dans ce cas on charge les modules de bases (<em>ex: pandas, numpy ou encore scipy</em>) comme dans l&apos;exemple suivant:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment"># Import</span>
+<span class="token keyword">import</span> dash
+<span class="token keyword">import</span> dash_bootstrap_components <span class="token keyword">as</span> dbc
+<span class="token keyword">import</span> dash_core_components <span class="token keyword">as</span> dcc
+<span class="token keyword">import</span> dash_html_components <span class="token keyword">as</span> html
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</pre><blockquote>
+<p>exemple: <em>analytics_page.py</em></p>
+</blockquote>
+<p>Ici le mot cl&#xE9; <em>as</em> permet d&apos;utiliser un alias pour le packages.</p>
+<ul>
+<li>Les <em>import</em> de modules locaux</li>
+</ul>
+<p>Dans ce cas on charge les modules locaux, c&apos;est-&#xE0;-dire les autres scripts au sein du projet. Par exemple dans le script <em>analytics_page.py</em>:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment"># Import local</span>
+<span class="token keyword">from</span> src<span class="token punctuation">.</span>obesity_page <span class="token keyword">import</span> generate_dropdown
+<span class="token keyword">from</span> src<span class="token punctuation">.</span>process_data <span class="token keyword">import</span> process_obesity<span class="token punctuation">,</span> process_employment
+<span class="token keyword">from</span> src<span class="token punctuation">.</span>paths <span class="token keyword">import</span> employmentPath<span class="token punctuation">,</span> obesityPath
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</pre><blockquote>
+<p>exemple: <em>analytics_page.py</em></p>
+</blockquote>
+<p>Ici on charge des fonctions (<em>generate_dropdown, process_obesity, process_obesity, process_employment</em>) et des variables (<em>employmentPath, obesityPath</em>) provenant des scripts <em>obesity_page.py</em>, <em>process_data.py</em> et <em><a href="http://paths.py">paths.py</a></em>.</p>
+<h4 class="mume-header" id="-le-chargement-des-donn%C3%A9es">- Le chargement des donn&#xE9;es</h4>
+
+<p>Dans cette section du script, on r&#xE9;cup&#xE8;re les jeux de donn&#xE9;es n&#xE9;cessaires &#xE0; utiliser pour le projet. Par exemple:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment"># Chargement des donnees</span>
+obesity <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>obesityPath<span class="token punctuation">,</span> index_col<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>countriesPath<span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    countriesGeoJson <span class="token operator">=</span> json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</pre><blockquote>
+<p>exemple: <em>obesity_page.py</em></p>
+</blockquote>
+<p>Ici on charge les jeux de donn&#xE9;es <em>Obesity among adults by country, 1975-2016</em> et <em>world-countries.json</em>.</p>
+<h4 class="mume-header" id="-le-traitement-des-donn%C3%A9es">- Le traitement des donn&#xE9;es</h4>
+
+<p>Dans cette section du script, on traite les jeux de donn&#xE9;es &#xE0; utiliser pour le projet. Par exemple:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment"># Chargement des donnees</span>
+obesity <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>obesityPath<span class="token punctuation">,</span> index_col<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment"># Traitement des donnees</span>
+obesity <span class="token operator">=</span> process_obesity<span class="token punctuation">(</span>obesity<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</pre><blockquote>
+<p>exemple: <em>obesity_page.py</em></p>
+</blockquote>
+<p>Ici apr&#xE8;s avoir charg&#xE9; le jeu de donn&#xE9;es, on utilise la fonction <em>process_obesity</em> provenant de <em>process_data.py</em>.</p>
+<h4 class="mume-header" id="-les-fonctions">- Les fonctions</h4>
+
+<p>Dans cette section du script, on a la d&#xE9;finition de toutes les fonctions. Par exemple:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment"># Fonctions pour la page</span>
+<span class="token keyword">def</span> <span class="token function">graph_map_obesity</span><span class="token punctuation">(</span>year<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token keyword">return</span> mapObesity
+
+<span class="token keyword">def</span> <span class="token function">graph_bar_obesity</span><span class="token punctuation">(</span>year<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token keyword">return</span> histogramObesity
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</pre><blockquote>
+<p>exemple: <em>obesity_page.py</em></p>
+</blockquote>
+<h4 class="mume-header" id="-les-variables">- Les variables</h4>
+
+<p>Dans cette section du script, on a la d&#xE9;finition de toutes les variables. Par exemple:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment"># Variables pour les elements de la page</span>
+minYear <span class="token operator">=</span> obesity<span class="token punctuation">.</span>year<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+maxYear <span class="token operator">=</span> obesity<span class="token punctuation">.</span>year<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+dropdown_continents <span class="token operator">=</span> generate_dropdown<span class="token punctuation">(</span>obesity<span class="token punctuation">,</span> <span class="token string">&apos;continent&apos;</span><span class="token punctuation">)</span>
+dropdown_countries <span class="token operator">=</span> generate_dropdown<span class="token punctuation">(</span>obesity<span class="token punctuation">,</span> <span class="token string">&apos;country&apos;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Selection du type de groupe</span>
+radioitems <span class="token operator">=</span> dbc<span class="token punctuation">.</span>FormGroup<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Page pour obesite</span>
+pageObesity <span class="token operator">=</span> html<span class="token punctuation">.</span>Div<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</pre><blockquote>
+<p>exemple: <em>obesity_page.py</em></p>
+</blockquote>
+<p>Ici par exemple la variable <em>pageObesity</em> continent l&apos;ensemble de la page <em>Obesity</em> c&apos;est-&#xE0;-dire (les &#xE9;l&#xE9;ments pour l&apos;interaction et les graphiques), et les variables <em>minYear</em>, <em>maxYear</em>, <em>dropdown_continents</em>, <em>dropdown_countries</em> et <em>radioitems</em> sont utilis&#xE9;s dans <em>pageObesity</em>.<br>
+Pour avoir plus d&apos;explication sur la structure de <em>pageObesity</em>, c&apos;est <a href="https://dash.plotly.com/layout">ici</a>.</p>
+<h3 class="mume-header" id="b-script-pathspy">B. Script <a href="http://paths.py">paths.py</a></h3>
+
+<p>Ce script s&apos;occupe de d&#xE9;finir des variables pour le chemin des jeux de donn&#xE9;es. Celui-ci utilise le package <em>os</em>.</p>
+<h3 class="mume-header" id="c-script-process_datapy">C. Script process_data.py</h3>
+
+<p>Ce script s&apos;occupe du traitement des donn&#xE9;es, voici sa structure:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token comment"># Imports</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token comment"># Fonctions complementaires</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token comment"># Fonctions principales</span>
+<span class="token keyword">def</span> <span class="token function">process_obesity</span><span class="token punctuation">(</span>obesity<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">def</span> <span class="token function">process_employment</span><span class="token punctuation">(</span>employment<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</pre><ul>
+<li>
+<h4>Traitement de <em>obesity</em> : <em>process_obesity</em></h4>
+</li>
+</ul>
+<h5 class="mume-header" id="-renommage-de-certaines-variables">- Renommage de certaines variables:</h5>
+
+<table>
+<thead>
+<tr>
+<th>Anciens noms</th>
+<th>Nouveaux noms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Country</td>
+<td>country</td>
+</tr>
+<tr>
+<td>Year</td>
+<td>year</td>
+</tr>
+<tr>
+<td>Obesity (%)</td>
+<td>obesity</td>
+</tr>
+<tr>
+<td>Sex</td>
+<td>sex</td>
+</tr>
+</tbody>
+</table>
+<h5 class="mume-header" id="-extraction-de-r%C3%A9els-%C3%A0-partir-dune-chaine-de-caract%C3%A8res">- Extraction de r&#xE9;els &#xE0; partir d&apos;une chaine de caract&#xE8;res</h5>
+
+<p>La fonction <em>extract_float(str, index)</em> permet d&apos;extraire un r&#xE9;el dans une cha&#xEE;ne de caract&#xE8;re &#xE0; un indice donn&#xE9;. On extrait les r&#xE9;els dans la variable <em>obesity</em> anciennement <em>Obesity (%)</em> en sachant que les valeurs de cette variable sont des cha&#xEE;nes de caract&#xE8;res dans le format suivant:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub><mo>=</mo><mi mathvariant="normal">&quot;</mi><msub><mi>X</mi><mrow><mi>i</mi><mo separator="true">,</mo><mn>0</mn></mrow></msub><mo stretchy="false">[</mo><msub><mi>X</mi><mrow><mi>i</mi><mo separator="true">,</mo><mn>1</mn></mrow></msub><mo>&#x2212;</mo><msub><mi>X</mi><mrow><mi>i</mi><mo separator="true">,</mo><mn>2</mn></mrow></msub><mo stretchy="false">]</mo><mi mathvariant="normal">&quot;</mi><mo separator="true">,</mo><msub><mi>S</mi><mi>i</mi></msub><mo>&#x2208;</mo><mtext>obesity</mtext><mo separator="true">,</mo><msub><mi>X</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo>&#x2208;</mo><mi mathvariant="double-struck">R</mi></mrow><annotation encoding="application/x-tex">S_i = &quot;X_{i,0}[X_{i,1}-X_{i,2}]&quot;, S_i \in \text{obesity}, X_{i,j} \in \R
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord">&quot;</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">]</span><span class="mord">&quot;</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2208;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord text"><span class="mord">obesity</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2208;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbb">R</span></span></span></span></span></span></p><p>Donc:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>&#xA0;extract_float</mtext><mo stretchy="false">(</mo><msub><mi>S</mi><mi>i</mi></msub><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo><mo>=</mo><msub><mi>X</mi><mrow><mi>i</mi><mo separator="true">,</mo><mn>0</mn></mrow></msub><mspace linebreak="newline"></mspace><mtext>&#xA0;extract_float</mtext><mo stretchy="false">(</mo><msub><mi>S</mi><mi>i</mi></msub><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo><mo>=</mo><msub><mi>X</mi><mrow><mi>i</mi><mo separator="true">,</mo><mn>1</mn></mrow></msub><mspace linebreak="newline"></mspace><mtext>&#xA0;extract_float</mtext><mo stretchy="false">(</mo><msub><mi>S</mi><mi>i</mi></msub><mo separator="true">,</mo><mn>2</mn><mo stretchy="false">)</mo><mo>=</mo><msub><mi>X</mi><mrow><mi>i</mi><mo separator="true">,</mo><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\text{ extract\_float}(S_i, 0)  = X_{i,0} \\
+\text{ extract\_float}(S_i, 1)  = X_{i,1} \\
+\text{ extract\_float}(S_i, 2)  = X_{i,2}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mord text"><span class="mord">&#xA0;extract_float</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mord text"><span class="mord">&#xA0;extract_float</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mord text"><span class="mord">&#xA0;extract_float</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></span></p><h5 class="mume-header" id="-changement-des-valeurs-pour-la-variable-sex">- Changement des valeurs pour la variable <em>sex</em></h5>
+
+<table>
+<thead>
+<tr>
+<th>Anciennes valeurs</th>
+<th>Nouvelles valeurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Male</td>
+<td>M</td>
+</tr>
+<tr>
+<td>Female</td>
+<td>F</td>
+</tr>
+<tr>
+<td>Both sexes</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+<p>Pour faire ceci il faut juste extraire la premi&#xE8;re lettre de la valeur et prendre sa majuscule.</p>
+<h5 class="mume-header" id="-cr%C3%A9ation-de-la-variable-country_code">- Cr&#xE9;ation de la variable <em>country_code</em></h5>
+
+<p>Cette variable sert seulement pour la repr&#xE9;sentation g&#xE9;olocalis&#xE9;e de l&apos;ob&#xE9;sit&#xE9;. Afin de la cr&#xE9;er, un package externe est n&#xE9;cessaire. On utilise le package <em>pycountry_convert</em>, pr&#xE9;cis&#xE9;ment la fonction <em>country_name_to_country_alpha2</em> qui va convertir un pays en son code alpha2 (<em>ex: France=FR</em>).</p>
+<p>Afin de g&#xE9;rer quelques exceptions, la fonction <em><strong>convert_country_to_country_code</strong></em> a &#xE9;t&#xE9; cr&#xE9;&#xE9;e.</p>
+<h5 class="mume-header" id="-cr%C3%A9ation-de-la-variable-continent">- Cr&#xE9;ation de la variable <em>continent</em></h5>
+
+<p>On utilise alors les fonctions <em><strong>country_name_to_country_alpha2</strong></em>  et <em><strong>country_alpha2_to_continent_code</strong></em> du package <em>pycountry_convert</em> pour cr&#xE9;er la variable <em>continent</em> voici les &#xE9;tapes suivies:</p>
+<ol>
+<li>Convertir le pays en code alpha2 avec <em><strong>country_name_to_country_alpha2</strong></em> (<em>ex: France=FR</em>)</li>
+<li>Convertir le code alpha2 en continent avec <em><strong>country_alpha2_to_continent_code</strong></em> (<em>ex: FR=Europe</em>)</li>
+<li>Affecter cette valeur &#xE0; la variable <em>continent</em></li>
+</ol>
+<p>Afin de g&#xE9;rer quelques exceptions, la fonction <em><strong>convert_country_to_continent</strong></em> a &#xE9;t&#xE9; cr&#xE9;&#xE9;e.</p>
+<ul>
+<li>
+<h4>Traitement de <em>employment</em> : <em>process_employment</em></h4>
+</li>
+</ul>
+<h5 class="mume-header" id="-renommage-de-certaines-variables-1">- Renommage de certaines variables:</h5>
+
+<table>
+<thead>
+<tr>
+<th>Anciens noms</th>
+<th>Nouveaux noms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LOCATION</td>
+<td>country_code</td>
+</tr>
+<tr>
+<td>Country</td>
+<td>country</td>
+</tr>
+<tr>
+<td>Subject</td>
+<td>subject</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>year</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>value</td>
+</tr>
+</tbody>
+</table>
+<h5 class="mume-header" id="-changement-des-valeurs-pour-la-variable-sex-1">- Changement des valeurs pour la variable <em>sex</em></h5>
+
+<table>
+<thead>
+<tr>
+<th>Anciennes valeurs</th>
+<th>Nouvelles valeurs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Males</td>
+<td>M</td>
+</tr>
+<tr>
+<td>Females</td>
+<td>F</td>
+</tr>
+<tr>
+<td>All persons</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+<h5 class="mume-header" id="-changement-des-valeurs-pour-la-variable-value">- Changement des valeurs pour la variable <em>value</em></h5>
+
+<p>&#xC9;tant donn&#xE9;e que les valeurs de la variable <em>value</em> sont des nombres qui repr&#xE9;sentent des milliers, on multiple les valeurs de cette colonne par 1 000.</p>
+<h5 class="mume-header" id="-cr%C3%A9ation-de-la-variable-continent-1">- Cr&#xE9;ation de la variable <em>continent</em></h5>
+
+<p>Comme pour <em>obesity</em>, on va cr&#xE9;er la variable continent &#xE0; partir de <em>country_code</em> et la fonction <em><strong>convert_country_to_continent</strong></em> qui a &#xE9;t&#xE9; cr&#xE9;&#xE9;e &#xE0; l&apos;occasion.</p>
+<h1 class="mume-header" id="iii-rapport-danalyse">III. Rapport d&apos;analyse</h1>
+
+<h2 class="mume-header" id="1-les-donn%C3%A9es">1. Les donn&#xE9;es</h2>
+
+<p>A partir d&apos;ici on suppose que les donn&#xE9;es on d&#xE9;j&#xE0; &#xE9;t&#xE9; trait&#xE9;es, pour plus de d&#xE9;tails <a href="#c-script-process_datapy">ici</a>.</p>
+<h3 class="mume-header" id="a-obesity-among-adults-by-country-1975-2016">A. Obesity among adults by country, 1975-2016</h3>
+
+<p>Ce jeu de donn&#xE9;es provient de <em><a href="https://www.kaggle.com/amanarora/obesity-among-adults-by-country-19752016">Kaggle</a></em>, une communaut&#xE9; regroupant des outils et des ressources pour la data science, pr&#xE9;cis&#xE9;ment celui-ci a &#xE9;t&#xE9; modifi&#xE9; par l&apos;utilisateur <em><a href="https://www.kaggle.com/amanarora">Aman Arora</a></em> &#xE0; partir des donn&#xE9;es originales se trouvant <a href="https://apps.who.int/gho/data/node.main.A900A?lang=en">ici</a> sur le site l&apos;<em>Organisation Mondiale de la Sant&#xE9; (OMS)</em>.</p>
+<p>Dans ce jeu de donn&#xE9;es on retrouve le pourcentage de personnes ob&#xE8;ses, pour les hommes/femmes/les deux, au sein d&apos;un pays pour une ann&#xE9;e sp&#xE9;cifique. Celui-ci est compos&#xE9; de <strong>24 570 enregistrements/lignes</strong> et de <strong>8 variables</strong>.</p>
+<p>Voici la structure du jeu de donn&#xE9;es post-traitement:</p>
+<br>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Variables</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>country</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>Le pays</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>country_code</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>Le code du pays en format ISO3</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>continent</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>Le continent, associ&#xE9; au <strong>country</strong></em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>year</strong></td>
+<td style="text-align:center">Num&#xE9;rique (ratio)</td>
+<td style="text-align:left"><em>L&apos;ann&#xE9;e</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>sex</strong></td>
+<td style="text-align:center">Categoriel binaire (nominal)</td>
+<td style="text-align:left"><em>Le sexe, on ne prend en compte que l&apos;homme ou la femme</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>obesity</strong></td>
+<td style="text-align:center">Num&#xE9;rique (ratio)</td>
+<td style="text-align:left"><em>L&apos;obesit&#xE9; moyenne en pourcentage pour un pays et un sexe donn&#xE9;</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>max_obesity</strong></td>
+<td style="text-align:center">Num&#xE9;rique (ratio)</td>
+<td style="text-align:left"><em>La valeure minimale en pourcentage de l&apos;obesit&#xE9;</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>min_obesity</strong></td>
+<td style="text-align:center">Num&#xE9;rique (ratio)</td>
+<td style="text-align:left"><em>La valeure maximale en pourcentage de l&apos;obesit&#xE9;</em></td>
+</tr>
+</tbody>
+</table>
+<p><ins>Remarques :</ins></p>
+<ul>
+<li>On ne travaille pas avec les variables <strong>max_obesity</strong> et  <strong>min_obesity</strong>, ceux-ci ont &#xE9;t&#xE9; gard&#xE9;es au cas o&#xF9; elles deviendraient utiles &#xE0; autrui ult&#xE9;rieurement.</li>
+<li>La variable <strong>country_code</strong> sert pour le graphique g&#xE9;olocalis&#xE9;, on utilise un jeu de donn&#xE9;es compl&#xE9;mentaire afin d&apos;obtenir les coordonn&#xE9;es g&#xE9;ographiques de chaque pays.</li>
+</ul>
+<br>
+<h3 class="mume-header" id="b-employment-by-activities-isic-rev4">B. Employment by activities (ISIC Rev.4)</h3>
+
+<p>Ce jeu de donn&#xE9;es provient de <em><a href="https://stats.oecd.org/Index.aspx?QueryId=3491">OECD (Organisation for Economic Co-operation and Development)</a></em>, une organisation &#xE9;conomique intergouvernementale compos&#xE9;e de 37 pays fond&#xE9;e en 1961 (<em>Wikipedia</em>) dans le but de stimuler la progression &#xE9;conomique et les &#xE9;changes.</p>
+<p>Dans ce jeu de donn&#xE9;es on retrouve le nombre d&apos;employ&#xE9;s selon des activit&#xE9;s &#xE9;conomiques. Ces activit&#xE9;s &#xE9;conomiques sont d&#xE9;finies par l&apos;<em>International Standard Industrial Classification (ISIC) Revision 4</em>, on y retrouve les activit&#xE9;s suivantes:</p>
+<ol>
+<li>Agriculture, forestry and fishing</li>
+<li>Mining and quarrying</li>
+<li>Manufacturing</li>
+<li>Electricity, gas, steam and air conditioning supply</li>
+<li>Water supply; sewerage, waste management and remediation activities</li>
+<li>Construction</li>
+<li>Wholesale and retail trade; repair of motor vehicles and motorcycles</li>
+<li>Transportation and storage</li>
+<li>Accommodation and food service activities</li>
+<li>Information and communication</li>
+<li>Financial and insurance activities</li>
+<li>Real estate activities</li>
+<li>Professional, scientific and technical activities</li>
+<li>Administrative and support service activities</li>
+<li>Public administration and defence; compulsory social security</li>
+<li>Education</li>
+<li>Human health and social work activities</li>
+<li>Arts, entertainment and recreation</li>
+<li>Other service activities</li>
+<li>Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use</li>
+<li>Activities of extraterritorial organizations and bodies</li>
+</ol>
+<p>Voici la structure du jeu de donn&#xE9;es post-traitement:</p>
+<br>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Variables</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>country</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>Le pays</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>country_code</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>Le code du pays en format ISO3</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>continent</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>Le continent, associ&#xE9; au pays</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>sex</strong></td>
+<td style="text-align:center">Categoriel binaire (nominal)</td>
+<td style="text-align:left"><em>Le sexe, on ne prend en compte que l&apos;homme ou la femme</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>year</strong></td>
+<td style="text-align:center">Num&#xE9;rique (ratio)</td>
+<td style="text-align:left"><em>L&apos;ann&#xE9;e</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>subject</strong></td>
+<td style="text-align:center">Categoriel (nominal)</td>
+<td style="text-align:left"><em>L&apos;activit&#xE9; &#xE9;conomique (list&#xE9;es au-dessus)</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>activity</strong></td>
+<td style="text-align:center">Categoriel binaire (nominal)</td>
+<td style="text-align:left"><em>Le type d&apos;emploi, soit bureautique, soit manuel</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>value</strong></td>
+<td style="text-align:center">Num&#xE9;rique (ratio)</td>
+<td style="text-align:left"><em>Le nombre d&apos;employ&#xE9;s dans le secteur, associ&#xE9; &#xE0; un secteur/ann&#xE9;e/pays</em></td>
+</tr>
+</tbody>
+</table>
+<p><ins>Remarques :</ins></p>
+<ul>
+<li>La cr&#xE9;ation de la variable <strong>activity</strong> a &#xE9;t&#xE9; faite manuellement &#xE0; partir de la variable <strong>subject</strong> donc celle-ci reste subjective &#xE0; notre bin&#xF4;me.</li>
+</ul>
+<br>
+<h2 class="mume-header" id="2-observations">2. Observations</h2>
+
+<p>Maintenant analysons les jeux de donn&#xE9;es sur l&apos;ob&#xE9;sit&#xE9; et l&apos;emploi afin de r&#xE9;pondre &#xE0; notre probl&#xE9;matique.</p>
+<h3 class="mume-header" id="a-obesity-among-adults-by-country-1975-2016-1">A. Obesity among adults by country, 1975-2016</h3>
+
+<ul>
+<li>
+<h4>Cartographie &amp; Distribution</h4>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">1975</th>
+<th style="text-align:center">1996</th>
+<th style="text-align:center">2016</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="images/obesity/map_obesity_1975.png" alt="map_obesity_1975"></td>
+<td style="text-align:center"><img src="images/obesity/map_obesity_1996.png" alt="map_obesity_1996"></td>
+<td style="text-align:center"><img src="images/obesity/map_obesity_2016.png" alt="map_obesity_2016"></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="images/obesity/distribution_obesity_1975.png" alt="distribution_obesity_1975"></td>
+<td style="text-align:center"><img src="images/obesity/distribution_obesity_1996.png" alt="distribution_obesity_1996"></td>
+<td style="text-align:center"><img src="images/obesity/distribution_obesity_2016.png" alt="distribution_obesity_2016"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>On observe plusieurs choses avec ces cartes et histogrammes:</p>
+<ul>
+<li>Les <strong>pays les moins d&#xE9;velopp&#xE9;s</strong> sont ceux qui poss&#xE8;dent une <strong>croissance faible m&#xEA;me quasi nulle du pourcentage d&apos;obesit&#xE9;</strong>.</li>
+<li>Les <strong>pays les plus d&#xE9;velopp&#xE9;es/riches</strong> et les <strong>pays en voie de d&#xE9;veloppement</strong> poss&#xE8;dent une croissance un peu plus &#xE9;lev&#xE9;e du pourcentage d&apos;ob&#xE9;sit&#xE9;.</li>
+<li>Un pays a r&#xE9;ussi &#xE0; avoir une majorit&#xE9; de sa population en ob&#xE9;sit&#xE9; (<em>Nauru</em>).</li>
+</ul>
+</li>
+<li>
+<h4>Analyse spacio-temporelle</h4>
+</li>
+</ul>
+<p><ins>Selon les continents:</ins></p>
+<p><img src="images/obesity/evolution_obesity_continent.png" alt="evolution_obesity_continent"></p>
+<ul>
+<li>
+<p>On observe plusieurs choses avec ce graphique:</p>
+<ul>
+<li><strong>Dans chaque continent</strong> le pourcentage d&apos;obesit&#xE9; au sein de la population ne fait <strong>que augmenter</strong>.</li>
+<li>Le continent avec me pourcentage d&apos;ob&#xE9;sit&#xE9; le plus &#xE9;lev&#xE9; est l&apos;<strong>Oc&#xE9;anie</strong>.</li>
+<li>Le continent avec le pourcentage d&apos;ob&#xE9;sit&#xE9; le plus faible est l&apos;<strong>Afrique</strong>.</li>
+</ul>
+</li>
+<li>
+<p><ins>Critiques:</ins></p>
+<ul>
+<li>Le calcul du pourcentage d&apos;ob&#xE9;sit&#xE9; par continent s&apos;est fait par le calcul des moyennes d&apos;ob&#xE9;sit&#xE9; de chaque pays du continent sans prendre en compte le coefficient de population par pays, donc les r&#xE9;sultats ne sont pas &#xE0; 100% repr&#xE9;sentatifs de la r&#xE9;alit&#xE9;.</li>
+</ul>
+</li>
+</ul>
+<p><ins>Selon les continents et le sexe:</ins></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Continent</th>
+<th style="text-align:center">Graphique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Asie</td>
+<td style="text-align:center"><img src="images/obesity/evolution_obesity_asia.png" alt="evolution_obesity_asia"></td>
+</tr>
+<tr>
+<td style="text-align:center">Europe</td>
+<td style="text-align:center"><img src="images/obesity/evolution_obesity_europe.png" alt="evolution_obesity_europe"></td>
+</tr>
+<tr>
+<td style="text-align:center">Amerique du nord</td>
+<td style="text-align:center"><img src="images/obesity/evolution_obesity_north_america.png" alt="evolution_obesity_north_america"></td>
+</tr>
+<tr>
+<td style="text-align:center">Amerique du sud</td>
+<td style="text-align:center"><img src="images/obesity/evolution_obesity_south_america.png" alt="evolution_obesity_south_america"></td>
+</tr>
+<tr>
+<td style="text-align:center">Oc&#xE9;anie</td>
+<td style="text-align:center"><img src="images/obesity/evolution_obesity_oceania.png" alt="evolution_obesity_oceania"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>On observe plusieurs choses avec ce graphique:</p>
+<ul>
+<li>Dans tout les continents, peut importe le sexe, <strong>la tendance pour le pourcentage de l&apos;ob&#xE9;sit&#xE9; est d&apos;augmenter</strong>.</li>
+<li>Dans la majorit&#xE9; des continents <strong>le pourcentage de femmes ob&#xE8;ses est toujours plus &#xE9;lev&#xE9; que les hommes</strong>.</li>
+<li><strong>L&apos;Europe est le seul continent qui a invers&#xE9; la position des courbes des hommes et des femmes</strong>. Donc &#xE0; partir d&apos;une certaine ann&#xE9;e le pourcentage d&apos;hommes ob&#xE8;ses est devenu plus &#xE9;lev&#xE9; que celui des femmes ob&#xE8;ses.</li>
+</ul>
+</li>
+<li>
+<p><ins>Critiques:</ins></p>
+<ul>
+<li>On retouve ici le m&#xEA;me probl&#xE8;me que le graphique pr&#xE9;c&#xE9;dent puisqu&apos;on n&apos;utilise pas le coefficient de la population pour le calcul de la moyenne d&apos;ob&#xE9;sit&#xE9;.</li>
+</ul>
+</li>
+<li>
+<h4>Bilan</h4>
+</li>
+</ul>
+<p>A partir de toutes ces observations on peut conclure que l&apos;ob&#xE9;sit&#xE9; est une maladie qui touche le monde entier cependant certains sont plus touch&#xE9;s que d&apos;autres, notamment les pays riches et  les plus d&#xE9;velopp&#xE9;s &#xE0; quelques exceptions pr&#xE8;s. En plus de cela, les femmes sont plus touch&#xE9;es que les hommes par cette maladie en g&#xE9;n&#xE9;ral cependant on observe une transition de cette tendance en Europe. Malheureusement <strong>l&apos;ob&#xE9;sit&#xE9; peut &#xEA;tre d&#xE9;crite comme une fonction croissante par rapport au temps</strong>, c&apos;est-&#xE0;-dire que le pourcentage de personnes ob&#xE8;ses ne fait qu&apos;augmenter.</p>
+<h3 class="mume-header" id="b-employment-by-activities-isic-rev4-1">B. Employment by activities (ISIC Rev.4)</h3>
+
+<ul>
+<li>
+<h4>Analyse spacio-temporelle</h4>
+</li>
+</ul>
+<p><ins>Selon le type d&apos;activit&#xE9;:</ins></p>
+<p><img src="images/employment/evolution_activity_type_employment.png" alt="evolution_activity_type_employment.png"></p>
+<ul>
+<li>On observe plusieurs choses avec ce graphique:
+<ul>
+<li>Le nombre d&apos;employ&#xE9;s dans <strong>les deux types d&apos;activit&#xE9; augmente jusque 2018</strong> puis <strong>en 2019 on a une petite chute</strong> (peut-&#xEA;tre d&#xFB; &#xE0; la crise de la <em>COVID-19</em>).</li>
+<li>Il y a <strong>plus d&apos;employ&#xE9;s dans les activit&#xE9;s manuelles que dans les activit&#xE9;s bureautiques</strong>.</li>
+</ul>
+</li>
+</ul>
+<br>
+<p><ins>Selon le type d&apos;activit&#xE9; pour un &#xE9;chantillon de pays:</ins></p>
+<p><img src="images/employment/evolution_activity_type_sample_employment.png" alt="evolution_activity_type_sample_employmen.png"></p>
+<ul>
+<li>On observe plusieurs choses avec ce graphique:
+<ul>
+<li>La majorit&#xE9; des pays poss&#xE8;de <strong>plus d&apos;employ&#xE9;s dans le manuel que dans le bureautique</strong>.</li>
+<li>Certains pays ont subi une <strong>transition o&#xF9; le nombre d&apos;employ&#xE9;s en bureautique est plus &#xE9;l&#xE9;v&#xE9; que dans le manuel</strong>. On remarque aussi le fait que <strong>le bureautique augmente</strong> et le <strong>manuel diminue ou se stabilise</strong> apr&#xE8;s cette transition.</li>
+</ul>
+</li>
+</ul>
+<p><ins>R&#xE9;partion des activit&#xE9;s manuelles:</ins><br>
+<img src="images/employment/manual_activities_employment.png" alt="manual_activities_employment.png"></p>
+<ul>
+<li>On observe plusieurs choses avec ce graphique:
+<ul>
+<li><em><strong>Le commerce de gros et de d&#xE9;tail, la r&#xE9;paration de v&#xE9;hicules automobiles et de motos</strong></em> repr&#xE9;sente environ un quart (<em>25%</em>) des activit&#xE9;s manuelles.</li>
+<li><em><strong>La production</strong></em> repr&#xE9;sente aussi environ un quart (<em>25%</em>) des activit&#xE9;s manuelles.</li>
+</ul>
+</li>
+</ul>
+<p><ins>R&#xE9;partion des activit&#xE9;s bureautiques:</ins><br>
+<img src="images/employment/desktop_activities_employment.png" alt="desktop_activities_employment.png"></p>
+<ul>
+<li>
+<p>On observe plusieurs choses avec ce graphique:</p>
+<ul>
+<li><em><strong>Les activit&#xE9;s sociales et m&#xE9;dicales</strong></em> repr&#xE9;sente environ un quart (<em>25%</em>) des activit&#xE9;s bureautiques.</li>
+<li><em><strong>L&apos;&#xE9;ducation</strong></em> repr&#xE9;sente environ un cinqui&#xE8;me (<em>20%</em>) des activit&#xE9;s bureautiques.</li>
+<li><em><strong>L&apos;administration et la d&#xE9;fense publique</strong></em> repr&#xE9;sente environ <em>16%</em> des activit&#xE9;s bureautiques.</li>
+</ul>
+</li>
+<li>
+<h4>Bilan</h4>
+</li>
+</ul>
+<p>A partir de toutes ces observations on peut conclure qu&apos;entre 2008 et 2018, l&apos;emploi poss&#xE9;dait une bonne dynamique car le nombre d&apos;employ&#xE9;s ne faisait qu&apos;augmenter dans cet interval. Cependant &#xE0; partir de 2019 il y a un arr&#xEA;t de cette dynamique que l&apos;on suppose &#xEA;tre la crise sanitaire de la <em>COVID-19</em>. Puis les m&#xE9;tiers bureautiques commencent peu &#xE0; peu &#xE0; devancer les m&#xE9;tiers manuels dans certains pays europ&#xE9;ens.</p>
+<h3 class="mume-header" id="c-comparaison-des-jeux-de-donn%C3%A9es">C. Comparaison des jeux de donn&#xE9;es</h3>
+
+<p>Nos deux jeux de donn&#xE9;es nous ont appris beaucoup de choses, cependant il serait int&#xE9;ressant de conclure sur notre probl&#xE9;matique en faisant des op&#xE9;rations entre  elles.</p>
+<ul>
+<li>
+<h4>Contraintes</h4>
+</li>
+</ul>
+<p>Malgr&#xE9; le fait que nos jeux de donn&#xE9;es soient chacunes assez compl&#xE8;tes, elles ne proviennent pas de la m&#xEA;me sources. Donc la fusion des jeux de donn&#xE9;es limites les comparaisons sur <strong>15 164 enregistrement/lignes</strong> dont <strong>32 pays</strong> r&#xE9;partis sur <strong>les ann&#xE9;es [2008;2016]</strong>.</p>
+<ul>
+<li>
+<h4>Correlation</h4>
+</li>
+</ul>
+<p><img src="images/analytics/heatmap_correlation_analytics.png" alt="heatmap_correlation_analytics"></p>
+<ul>
+<li><ins>Explication du graphique:</ins>
+<ul>
+<li>En abscisse, les pays</li>
+<li>En ordonn&#xE9;e, le type d&apos;activit&#xE9; (<em>Desk: Bureautique, Manual: Manuel</em>)</li>
+<li>Les carr&#xE9;s repr&#xE9;sentent la correlation entre l&apos;ob&#xE9;sit&#xE9; et le nombre d&apos;employ&#xE9;s dans le type d&apos;activit&#xE9;. La couleur des carr&#xE9;s est interpr&#xE9;t&#xE9; de la mani&#xE8;re suivante:
+<ul>
+<li>Plus la couleur du carr&#xE9; se rapproche du <strong><span style="color:blue">bleu</span></strong> &#x1F535;, donc de la valeur <strong><span style="color:blue">1</span></strong>, alors correlation est positive. Cela signifie que <strong><span style="color:blue">l&apos;ob&#xE9;sit&#xE9; et le type d&apos;activit&#xE9; peuvent &#xEA;tre repr&#xE9;sent&#xE9;s par une fonction croissante</span></strong>.</li>
+<li>Plus la couleur du carr&#xE9; se rapproche du <strong><span style="color:red">rouge</span></strong> &#x1F534;, donc de la valeur <strong><span style="color:red">-1</span></strong>, alors correlation est positive. Cela signifie que <strong><span style="color:red">l&apos;ob&#xE9;sit&#xE9; et le type d&apos;activit&#xE9;s peuvent &#xEA;tre repr&#xE9;sent&#xE9; par une fonction d&#xE9;croissante</span></strong>.</li>
+</ul>
+</li>
+<li>Par exemple pour la France:
+<ul>
+<li>&#x1F535; <strong>Desk/Obesity</strong> en bleu implique que <strong><span style="color:blue">le pourcentage d&apos;obesit&#xE9; augmente lorsque le nombre d&apos;employ&#xE9;s dans les bureaux augmente</span></strong>.</li>
+<li>&#x1F534; <strong>Manual/Obesity</strong> en rouge implique que <strong><span style="color:red">le pourcentage d&apos;obesit&#xE9; baisse lorsque le nombre d&apos;employ&#xE9;s travaillant manuellement augmente</span></strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="diff" class="language-diff"></pre><br>
+<ul>
+<li><ins>Observations:</ins>
+<ul>
+<li><strong><span style="color:blue">Desk</span>&#x1F535; <span style="color:red">Manual</span></strong> &#x1F534;: <b>14 pays</b> (<em>Denmark, Finland, France, Hungary, Ireland, Italy, Japan, Latvia, Lithuania, Netherlands, Poland, Portugal, Slovenia, Sweden</em>)</li>
+<li><strong><span style="color:blue">Desk</span>&#x1F535; <span style="color:blue">Manual</span></strong> &#x1F535;: <b>16 pays</b> (<em>Australia, Austria, Belgium, Chile, Colombia, Costa Rica, Estonia, Germany, Iceland, Israel, Luxembourg, Mexico, New Zealand, Norway, Switzerland, Turkey</em>)</li>
+<li><strong><span style="color:red">Desk</span>&#x1F534; <span style="color:red">Manual</span></strong> &#x1F534;: <b>2 pays</b> (<em>Greece, Spain</em>)</li>
+</ul>
+</li>
+<li><ins>Hypoth&#xE8;ses:</ins>
+<ul>
+<li>Pour les pays en <strong><span style="color:blue">Desk</span>&#x1F535; <span style="color:red">Manual</span></strong> &#x1F534; sont les pays qui ont tendance &#xE0; moins recruter dans les m&#xE9;tiers manuels mais plus dans les m&#xE9;tiers bureautiques.</li>
+<li>Pour les pays en <strong><span style="color:blue">Desk</span>&#x1F535; <span style="color:blue">Manual</span></strong> &#x1F535; sont les pays qui recrutent dans les m&#xE9;tiers manuels et bureautiques.</li>
+<li>Pour les pays en <strong><span style="color:red">Desk</span>&#x1F534; <span style="color:red">Manual</span></strong> &#x1F534; sont les pays qui sont possiblement en crise.</li>
+</ul>
+</li>
+</ul>
+<br>
+<ul>
+<li><strong>Bilan</strong></li>
+</ul>
+<p>En combinant nos jeux de donn&#xE9;es, on a d&#xE9;couvert <strong>3 groupes de pays qui pr&#xE9;sentent des comportements similaires</strong> gr&#xE2;ce &#xE0; la correlation entre l&apos;ob&#xE9;sit&#xE9; et l&apos;emploi dans les activit&#xE9;s manuelles/bureautiques.</p>
+<h2 class="mume-header" id="3-conclusion">3. Conclusion</h2>
+
+<p>En conclusion on peut dire qu&apos;il existe un lien entre l&apos;ob&#xE9;sit&#xE9; et la croissance des emplois en bureaux. Cependant ce lien n&apos;est pas pr&#xE9;sent pour tous les pays car cela d&#xE9;pendant aussi de leur situation &#xE9;conomique, politique <sup>et</sup>/<sub>ou </sub>d&#xE9;mographique.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

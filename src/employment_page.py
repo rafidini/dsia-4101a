@@ -113,19 +113,20 @@ def graph_pie_subjects_country_year(pYear, pCountry, pActivity, pSex):
 
     pie.update_layout(
         #showlegend=False,
-        margin=dict(l=4, r=4, t=4, b=4),
+        margin=dict(l=4, r=4, t=40, b=4),
         paper_bgcolor='rgba(48,48,48,1)',
         plot_bgcolor='rgba(48,48,48,1)',
-        font=dict(
-            size=12,
-            color="white"
-        ),
+        title="{} jobs in {} during {}".format("Desktop" if pActivity == "D" else "Manual", pCountry, pYear),
         legend = dict(
             bgcolor = 'rgba(0, 0, 0, 0)',
             yanchor="top",
             y=0.0,
             xanchor="left",
-            x=0.0
+            x=0.0,
+        ),
+        font=dict(
+            size=12,
+            color="white"
         )
     )
 

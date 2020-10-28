@@ -230,6 +230,38 @@ Et bien sûr pour quitter la fenêtre secondaire il suffit de cliquer sur le bou
 
 ### C. Page *Employment*
 
+![page_employment_main.png](images/utilisation/page_employment_main.png)
+
+Sur cette page, *Employment*, on utilise le jeu de données *Employment by activities (ISIC Rev.4)*.
+
+- #### Menu
+
+![page_employment_menu.png](images/utilisation/page_employment_menu.png)
+
+Cet élément de la page permet de contrôler les différents graphiques présents sur la page. Ce menu permet de modifier les variables suivantes:
+- *Country*: Pays
+- *Year range*: interval temporel (années)
+- *Sex*: Sexe
+- *Activity type*: Type d'activité, bureautique ou manuel
+
+- #### Graphique: Evolution des secteurs d'activités au cours du temps
+
+![page_employment_lineplot1.gif](images/utilisation/page_employment_lineplot1.gif)
+
+Ce graphique montre l'évolution des activités d'un secteur (bureautique ou manuel) dans un interval temporel pour un pays et un sexe donné. Chaque couche représente une activité, l'abscisse représente les années et l'ordonnée le nombre d'employés.
+
+- #### Graphique: Répartition des secteurs d'activités 
+
+![page_employment_piechart.gif](images/utilisation/page_employment_piechart.gif)
+
+Ce graphique montre la répartition des employés dans un secteur d'activités (bureautique ou manuel) au cours d'un année spécifique (controlée avec le slider situé en en dessous du graphique) pour un pays et un sex donné.
+
+- #### Graphique: Evolution des emplois bureautiques et manuels
+
+![page_employment_lineplot2.gif](images/utilisation/page_employment_lineplot2.gif)
+
+Ce graphique montre l'évolution des deux secteurs d'activités dans un interval temporel donné. En ordonnée, on a le nombre d'employés et en abscisse les années.
+
 ### D. Page *Analytics*
 
 ![page_analytics_main.png](images/utilisation/page_analytics_main.png)
@@ -488,16 +520,16 @@ def process_employment(employment):
 
 La fonction *extract_float(str, index)* permet d'extraire un réel dans une chaîne de caractère à un indice donné. On extrait les réels dans la variable *obesity* anciennement *Obesity (%)* en sachant que les valeurs de cette variable sont des chaînes de caractères dans le format suivant:
 
-\\\(
-S_i = "X_{i,0}[X_{i,1}-X{i,2}]", S_i \in \text{obesity}, X_{i,j} \in \R
-\\\)
+```math
+S_i = "X_{i,0}[X_{i,1}-X_{i,2}]", S_i \in \text{obesity}, X_{i,j} \in \R
+```
 
 Donc:
-\\\(
+```math
 \text{ extract\_float}(S_i, 0)  = X_{i,0} \\
 \text{ extract\_float}(S_i, 1)  = X_{i,1} \\
 \text{ extract\_float}(S_i, 2)  = X_{i,2}
-\\\)
+```
 
 ##### - Changement des valeurs pour la variable *sex*
 
@@ -697,7 +729,43 @@ A partir de toutes ces observations on peut conclure que l'obésité est une mal
 ### B. Employment by activities (ISIC Rev.4)
 
 - #### Analyse spacio-temporelle
+
+<ins>Selon le type d'activité:</ins>
+
+![evolution_activity_type_employment.png](images/employment/evolution_activity_type_employment.png)
+
+- On observe plusieurs choses avec ce graphique:
+  - Le nombre d'employés dans **les deux types d'activité augmente jusque 2018** puis **en 2019 on a une petite chute** (peut-être dû à la crise de la *COVID-19*).
+  - Il y a **plus d'employés dans les activités manuelles que dans les activités bureautiques**.
+
+<br>
+
+<ins>Selon le type d'activité pour un échantillon de pays:</ins>
+
+![evolution_activity_type_sample_employmen.png](images/employment/evolution_activity_type_sample_employment.png)
+
+- On observe plusieurs choses avec ce graphique:
+  - La majorité des pays possède **plus d'employés dans le manuel que dans le bureautique**.
+  - Certains pays ont subi une **transition où le nombre d'employés en bureautique est plus élévé que dans le manuel**. On remarque aussi le fait que **le bureautique augmente** et le **manuel diminue ou se stabilise** après cette transition.
+
+<ins>Répartion des activités manuelles:</ins>
+![manual_activities_employment.png](images/employment/manual_activities_employment.png)
+
+- On observe plusieurs choses avec ce graphique:
+  - ***Le commerce de gros et de détail, la réparation de véhicules automobiles et de motos*** représente environ un quart (*25%*) des activités manuelles.
+  - ***La production*** représente aussi environ un quart (*25%*) des activités manuelles.
+
+<ins>Répartion des activités bureautiques:</ins>
+ ![desktop_activities_employment.png](images/employment/desktop_activities_employment.png)
+
+- On observe plusieurs choses avec ce graphique:
+  - ***Les activités sociales et médicales*** représente environ un quart (*25%*) des activités bureautiques. 
+  - ***L'éducation*** représente environ un cinquième (*20%*) des activités bureautiques. 
+  - ***L'administration et la défense publique*** représente environ *16%* des activités bureautiques. 
+
 - #### Bilan
+
+A partir de toutes ces observations on peut conclure qu'entre 2008 et 2018, l'emploi possédait une bonne dynamique car le nombre d'employés ne faisait qu'augmenter dans cet interval. Cependant à partir de 2019 il y a un arrêt de cette dynamique que l'on suppose être la crise sanitaire de la *COVID-19*. Puis les métiers bureautiques commencent peu à peu à devancer les métiers manuels dans certains pays européens.
 
 ### C. Comparaison des jeux de données
 
