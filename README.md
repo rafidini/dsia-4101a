@@ -132,7 +132,7 @@ Lancez un invité de commande/cmd/powershell puis rendez-vous au niveau du dossi
 ```shell
 > cd [Le chemin menant au dossier]
 > ls
-README.md     main.py     data     src
+README.md     main.py     data     src     images
 requirements.txt
 ```
 
@@ -145,7 +145,7 @@ Lancez un terminal/invité de commandes/console au niveau du projet:
 ```bash
 $ cd [Le chemin menant au dossier]
 $ ls
-README.md     main.py     data     src
+README.md     main.py     data     src     images
 requirements.txt
 ```
 Il faudra bien-sûr remplacer le "*[Le chemin menant au dossier]*" par le chemin réel sur votre appareil. Si vous ne vous retrouvez pas avec le même affichage alors vérifiez si vous êtes bien dans le bon dossier ou non sinon jusqu'à là c'est bon.  
@@ -219,7 +219,7 @@ La fenêtre secondaire est une fenêtre sur laquelle on peut avoir plus d'inform
 <img src="images/utilisation/page_obesity_secondary_lineplot.gif" alt="drawing" height="400"/>
 
 - Changer l'année pour intéragir avec:
-  - Le camembert représentant le part de personnes obèses et non obèses au sein de la région.
+  - Le camembert représentant la part de personnes obèses et non obèses au sein de la région.
   - Le rang de la région par rapport aux autres (*ex: un pays sera comparé à tout les autres pays du monde, un continent sera comparé aux autres continents*). Ce rang est définit tel que plus le rang est petit, plus faible est le pourcentage d'obésité et réciproquement plus le rang est grand, plus élevé est le pourcentage d'obésité.
 
 <img src="images/utilisation/page_obesity_secondary_piechart.gif" alt="drawing" height="400"/>
@@ -787,9 +787,7 @@ Malgré le fait que nos jeux de données soient chacunes assez complètes, elles
   - Par exemple pour la France:
     - 🔵 **Desk/Obesity** en bleu implique que **<span style="color:blue">le pourcentage d'obesité augmente lorsque le nombre d'employés dans les bureaux augmente</span>**.
     - 🔴 **Manual/Obesity** en rouge implique que **<span style="color:red">le pourcentage d'obesité baisse lorsque le nombre d'employés travaillant manuellement augmente</span>**.
-  
-```diff
-```
+
 <br>
 
 - <ins>Observations:</ins>
