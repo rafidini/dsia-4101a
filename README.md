@@ -23,7 +23,7 @@ Et nos jeux de données sont:
 - *[Employment by activities (ISIC Rev.4)](https://stats.oecd.org/Index.aspx?QueryId=3491)*
   > *source: OECD Stats*
 
-#### Problématique
+####  1. <a name='Problmatique'></a>Problématique
 Alors notre binôme s'est demandé: <ins>*Existe t'il un lien entre l'obesité et les emplois bureautiques <sup>et</sup>/<sub>ou</sub> manuels?*</ins>
 
 <br>
@@ -32,15 +32,60 @@ ___
 
 # Table des matières
 
-[[_TOC_]]
+<!-- vscode-markdown-toc -->
+* 1. [1. Installation & Téléchargement](#InstallationTlchargement)
+	* 1.1. [A. Python (3.X.X)](#A.Python3.X.X)
+	* 1.2. [B. *pip*/*pip3*](#B.pippip3)
+	* 1.3. [C. Le dashboard](#C.Ledashboard)
+		* 1.3.1. [Télécharger le projet](#Tlchargerleprojet)
+		* 1.3.2. [Packages nécessaires](#Packagesncessaires)
+* 2. [2. Exécution](#Excution)
+	* 2.1. [A. Windows](#A.Windows)
+	* 2.2. [B. Linux & macOS](#B.LinuxmacOS)
+* 3. [3. Utilisation](#Utilisation)
+	* 3.1. [A. Bar de navigation](#A.Bardenavigation)
+	* 3.2. [B. Page *Obesity*](#B.PageObesity)
+	* 3.3. [C. Page *Employment*](#C.PageEmployment)
+	* 3.4. [D. Page *Analytics*](#D.PageAnalytics)
+* 4. [1. Les répertoires & fichiers](#Lesrpertoiresfichiers)
+	* 4.1. [A. *data*](#A.data)
+	* 4.2. [B. *images*](#B.images)
+	* 4.3. [C. *src*](#C.src)
+	* 4.4. [D. *main.py*](#D.main.py)
+	* 4.5. [E. *requirements.txt*](#E.requirements.txt)
+	* 4.6. [F. *README.md*](#F.README.md)
+* 5. [2. Le code](#Lecode)
+	* 5.1. [A. Script se terminant par [...]_page.py + navigation_bar.py](#A.Scriptseterminantpar..._page.pynavigation_bar.py)
+		* 5.1.1. [- Les *import*](#Lesimport)
+		* 5.1.2. [- Le chargement des données](#Lechargementdesdonnes)
+		* 5.1.3. [- Le traitement des données](#Letraitementdesdonnes)
+		* 5.1.4. [- Les fonctions](#Lesfonctions)
+		* 5.1.5. [- Les variables](#Lesvariables)
+	* 5.2. [B. Script paths.py](#B.Scriptpaths.py)
+	* 5.3. [C. Script process_data.py](#C.Scriptprocess_data.py)
+* 6. [1. Les données](#Lesdonnes)
+	* 6.1. [A. Obesity among adults by country, 1975-2016](#A.Obesityamongadultsbycountry1975-2016)
+	* 6.2. [B. Employment by activities (ISIC Rev.4)](#B.EmploymentbyactivitiesISICRev.4)
+* 7. [2. Observations](#Observations)
+	* 7.1. [A. Obesity among adults by country, 1975-2016](#A.Obesityamongadultsbycountry1975-2016-1)
+	* 7.2. [B. Employment by activities (ISIC Rev.4)](#B.EmploymentbyactivitiesISICRev.4-1)
+	* 7.3. [C. Comparaison des jeux de données](#C.Comparaisondesjeuxdedonnes)
+* 8. [3. Conclusion](#Conclusion)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
 ___
 
 
 # I. Guide utilisateur
 
-## 1. Installation & Téléchargement
+##  1. <a name='InstallationTlchargement'></a>1. Installation & Téléchargement
 
-### A. Python (3.X.X)
+###  1.1. <a name='A.Python3.X.X'></a>A. Python (3.X.X)
 Dans un premier temps, afin d'utiliser notre projet il faudra posséder ***Python v3.X.X*** sur votre appareil. Pour cela, que votre appareil soit sous Linux, macOS, Windows ou autre, rendez vous la page de téléchargement de Python en cliquant [ici](https://www.python.org/downloads/). Puis suivez les instructions lors de l'installation.
 
 Après l'installation, vérifiez que ***Python v3.X.X*** est bien installé sur votre appareil en tapant les commandes suivantes sur le Terminal, Invité de commandes, PowerShell ou autre selon votre système d'exploitation:
@@ -62,7 +107,7 @@ Python 2.X.X
 ```
 Alors reinstallez une version 3.X.X de Python.
 
-### B. *pip*/*pip3*
+###  1.2. <a name='B.pippip3'></a>B. *pip*/*pip3*
 
 Dans un second temps, installer Python ne suffit pas. Le projet utilise différents "*packages*" qui ne sont pas disponibles automatiquement avec ***Python*** alors il faudra installer *pip*.
 
@@ -72,13 +117,13 @@ Dans un second temps, installer Python ne suffit pas. Le projet utilise différe
 
 Sinon voici un lien pour le télécharger [ici](https://pip.pypa.io/en/stable/installing/).
 
-### C. Le dashboard
+###  1.3. <a name='C.Ledashboard'></a>C. Le dashboard
 
-#### Télécharger le projet
+####  1.3.1. <a name='Tlchargerleprojet'></a>Télécharger le projet
 
 Le projet est téléchargeable sur le la page suivante [ici](https://git.esiee.fr/rafidini/dsia-4101a). Celui-ci pourra être utilisé comme un "Git Repository", en "*forkant*" le projet, ou comme un projet dossier normal, en "*clonant*" le projet sur votre ordinateur.
 
-#### Packages nécessaires
+####  1.3.2. <a name='Packagesncessaires'></a>Packages nécessaires
 
 Pour que le projet marche comme il faut, des packages supplémentaires sont nécessaires. Le nom de ces packages sont disponibles dans le fichier *requirements.txt*:
 
@@ -115,9 +160,9 @@ python -m pip install -r requirements.txt
 python3 -m pip install -r requirements.txt
 ```
 
-## 2. Exécution
+##  2. <a name='Excution'></a>2. Exécution
 
-### A. Windows
+###  2.1. <a name='A.Windows'></a>A. Windows
 
 Lancez un invité de commande/cmd/powershell puis rendez-vous au niveau du dossier du projet:
 
@@ -140,7 +185,7 @@ Il faudra bien-sûr remplacer le "*[Le chemin menant au dossier]*" par le chemin
 
 Une fois que vous avez le même affichage, lancez une des commandes suivantes afin de lancer l'application:
 
-### B. Linux & macOS
+###  2.2. <a name='B.LinuxmacOS'></a>B. Linux & macOS
 Lancez un terminal/invité de commandes/console au niveau du projet:
 ```bash
 $ cd [Le chemin menant au dossier]
@@ -171,11 +216,11 @@ Dash is running on http://127.0.0.1:8050/
  * Debug mode: on
 ```
 
-## 3. Utilisation
+##  3. <a name='Utilisation'></a>3. Utilisation
 
 Une fois éxécuté, le "*dashboard*" est accessible à l'adresse [http://127.0.0.1:8050/](http://127.0.0.1:8050/).
 
-### A. Bar de navigation
+###  3.1. <a name='A.Bardenavigation'></a>A. Bar de navigation
 
 ![navigation_bar.png](images/utilisation/navigation_bar.png)
 
@@ -185,7 +230,7 @@ Pour d'accéder aux différentes pages proposées par l'application il y a la ba
 - *Analytics*
 Tous sont accessibles en cliquant sur le label correspondant à la page à droite de la bar de navigation.
 
-### B. Page *Obesity*
+###  3.2. <a name='B.PageObesity'></a>B. Page *Obesity*
 
 Lorsque l'installation et l'éxecution ont bien été respéctés alors on se retrouve sur la page suivante:  
 
@@ -228,7 +273,7 @@ La fenêtre secondaire est une fenêtre sur laquelle on peut avoir plus d'inform
 
 Et bien sûr pour quitter la fenêtre secondaire il suffit de cliquer sur le bouton rouge "<span style="color:red"><b>Close</b></span>".
 
-### C. Page *Employment*
+###  3.3. <a name='C.PageEmployment'></a>C. Page *Employment*
 
 ![page_employment_main.png](images/utilisation/page_employment_main.png)
 
@@ -262,7 +307,7 @@ Ce graphique montre la répartition des employés dans un secteur d'activités (
 
 Ce graphique montre l'évolution des deux secteurs d'activités dans un interval temporel donné. En ordonnée, on a le nombre d'employés et en abscisse les années.
 
-### D. Page *Analytics*
+###  3.4. <a name='D.PageAnalytics'></a>D. Page *Analytics*
 
 ![page_analytics_main.png](images/utilisation/page_analytics_main.png)
 
@@ -280,11 +325,11 @@ Sur cette page, *Analytics*, on utilise les deux jeux de données combinés en u
 
 Dans ce guide développeur la structure, le code des scripts python et le rôle des fichiers dans le projet seront expliqués.
 
-## 1. Les répertoires & fichiers
+##  4. <a name='Lesrpertoiresfichiers'></a>1. Les répertoires & fichiers
 
 Dans cette partie, on explique le rôle de chaque répertoire ainsi que les fichiers qui y appartiennent.
 
-### A. *data*
+###  4.1. <a name='A.data'></a>A. *data*
 
 Ce répertoire contient l'ensemble des jeux de données utilisés pour le projet. Voici leurs utilités:
 
@@ -292,11 +337,11 @@ Ce répertoire contient l'ensemble des jeux de données utilisés pour le projet
 - ***obesity.csv***: Le jeu de données sur l'obésité, *Obesity among adults by country, 1975-2016*.
 - ***world-country.json***: Le jeu de données contenant les délimitations de tout les pays du monde, voici la source [ici](https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/world-countries.json). 
 
-### B. *images*
+###  4.2. <a name='B.images'></a>B. *images*
 
 Ce répertoire contient l'ensemble des images pour le projet, mais ces images servent principalement pour la rédaction de ce guide.
 
-### C. *src*
+###  4.3. <a name='C.src'></a>C. *src*
 
 Ce répertoire continent l'ensemble du code du projet. Voici le rôle de chaque fichier:
 
@@ -308,13 +353,13 @@ Ce répertoire continent l'ensemble du code du projet. Voici le rôle de chaque 
  - ***analytics_page.py***: Ce script python contient le code pour la création de la page *Analytics* (fonctionnalités et apparence).
  - <p><em><b>__init__.py</b></em>: Ce script python n'existe que pour que l'on puisse importer les fonctions/variables des autres scripts locaux au projet.</p>
 
-### D. *main.py*
+###  4.4. <a name='D.main.py'></a>D. *main.py*
 
 Ce script python contient le code pour:
 - Exécuter l'application.
 - Créer l'intéractivité entre les différents composants de la page avec les jeux de données. Donc un rôle de serveur.
 
-### E. *requirements.txt*
+###  4.5. <a name='E.requirements.txt'></a>E. *requirements.txt*
 
 Ce fichier texte contient les noms des différents packages nécessaires à l'utilisation du projet. 
   
@@ -336,7 +381,7 @@ python -m pip freeze > requirements.txt
 python3 -m pip freeze > requirements.txt
 ```
 
-### F. *README.md*
+###  4.6. <a name='F.README.md'></a>F. *README.md*
 
 Ce fichier *Markdown*, que vous êtes actuellement en train de lire normalement, contient:
 - Présentation du projet
@@ -344,9 +389,9 @@ Ce fichier *Markdown*, que vous êtes actuellement en train de lire normalement,
 - Guide développeur
 - Rapport d'analyse
 
-## 2. Le code
+##  5. <a name='Lecode'></a>2. Le code
 
-### A. Script se terminant par [...]_page.py + navigation_bar.py
+###  5.1. <a name='A.Scriptseterminantpar..._page.pynavigation_bar.py'></a>A. Script se terminant par [...]_page.py + navigation_bar.py
 
 Ces scripts python sont structurés de la manière suivante:
 
@@ -371,7 +416,7 @@ Module pour [rôle du script].
 ...
 ```
 
-#### - Les *import*
+####  5.1.1. <a name='Lesimport'></a>- Les *import*
 
 Dans cette section du script, on charge les packages nécessaires pour remplir la fonction du script. Dans ces scripts on a deux types d'*import*:
 - Les *import* de packages:
@@ -406,7 +451,7 @@ from src.paths import employmentPath, obesityPath
 
 Ici on charge des fonctions (*generate_dropdown, process_obesity, process_obesity, process_employment*) et des variables (*employmentPath, obesityPath*) provenant des scripts *obesity_page.py*, *process_data.py* et *paths.py*.
 
-#### - Le chargement des données
+####  5.1.2. <a name='Lechargementdesdonnes'></a>- Le chargement des données
 
 Dans cette section du script, on récupère les jeux de données nécessaires à utiliser pour le projet. Par exemple:
 
@@ -423,7 +468,7 @@ with open(countriesPath) as f:
 
 Ici on charge les jeux de données *Obesity among adults by country, 1975-2016* et *world-countries.json*.
 
-#### - Le traitement des données
+####  5.1.3. <a name='Letraitementdesdonnes'></a>- Le traitement des données
 
 Dans cette section du script, on traite les jeux de données à utiliser pour le projet. Par exemple:
 
@@ -440,7 +485,7 @@ obesity = process_obesity(obesity)
 
 Ici après avoir chargé le jeu de données, on utilise la fonction *process_obesity* provenant de *process_data.py*.
 
-#### - Les fonctions
+####  5.1.4. <a name='Lesfonctions'></a>- Les fonctions
 
 Dans cette section du script, on a la définition de toutes les fonctions. Par exemple:
 
@@ -458,7 +503,7 @@ def graph_bar_obesity(year):
 ```
 > exemple: *obesity_page.py*
 
-#### - Les variables
+####  5.1.5. <a name='Lesvariables'></a>- Les variables
 
 Dans cette section du script, on a la définition de toutes les variables. Par exemple:
 
@@ -482,11 +527,11 @@ pageObesity = html.Div([...])
 Ici par exemple la variable *pageObesity* continent l'ensemble de la page *Obesity* c'est-à-dire (les éléments pour l'interaction et les graphiques), et les variables *minYear*, *maxYear*, *dropdown_continents*, *dropdown_countries* et *radioitems* sont utilisés dans *pageObesity*.
 Pour avoir plus d'explication sur la structure de *pageObesity*, c'est [ici](https://dash.plotly.com/layout).
 
-### B. Script paths.py
+###  5.2. <a name='B.Scriptpaths.py'></a>B. Script paths.py
 
 Ce script s'occupe de définir des variables pour le chemin des jeux de données. Celui-ci utilise le package *os*.
 
-### C. Script process_data.py
+###  5.3. <a name='C.Scriptprocess_data.py'></a>C. Script process_data.py
 
 Ce script s'occupe du traitement des données, voici sa structure:
 
@@ -590,11 +635,11 @@ Comme pour *obesity*, on va créer la variable continent à partir de *country_c
 
 # III. Rapport d'analyse
 
-## 1. Les données
+##  6. <a name='Lesdonnes'></a>1. Les données
 
 A partir d'ici on suppose que les données on déjà été traitées, pour plus de détails [ici](#c-script-process_datapy).
 
-### A. Obesity among adults by country, 1975-2016
+###  6.1. <a name='A.Obesityamongadultsbycountry1975-2016'></a>A. Obesity among adults by country, 1975-2016
 
 Ce jeu de données provient de *[Kaggle](https://www.kaggle.com/amanarora/obesity-among-adults-by-country-19752016)*, une communauté regroupant des outils et des ressources pour la data science, précisément celui-ci a été modifié par l'utilisateur *[Aman Arora](https://www.kaggle.com/amanarora)* à partir des données originales se trouvant [ici](https://apps.who.int/gho/data/node.main.A900A?lang=en) sur le site l'*Organisation Mondiale de la Santé (OMS)*.
   
@@ -622,7 +667,7 @@ Voici la structure du jeu de données post-traitement:
 
 <br>
 
-### B. Employment by activities (ISIC Rev.4)
+###  6.2. <a name='B.EmploymentbyactivitiesISICRev.4'></a>B. Employment by activities (ISIC Rev.4)
 
 Ce jeu de données provient de *[OECD (Organisation for Economic Co-operation and Development)](https://stats.oecd.org/Index.aspx?QueryId=3491)*, une organisation économique intergouvernementale composée de 37 pays fondée en 1961 (*Wikipedia*) dans le but de stimuler la progression économique et les échanges.
   
@@ -672,11 +717,11 @@ Voici la structure du jeu de données post-traitement:
 
 
 
-## 2. Observations
+##  7. <a name='Observations'></a>2. Observations
 
 Maintenant analysons les jeux de données sur l'obésité et l'emploi afin de répondre à notre problématique.
 
-### A. Obesity among adults by country, 1975-2016 
+###  7.1. <a name='A.Obesityamongadultsbycountry1975-2016-1'></a>A. Obesity among adults by country, 1975-2016 
 
 - #### Cartographie & Distribution
 
@@ -726,7 +771,7 @@ Maintenant analysons les jeux de données sur l'obésité et l'emploi afin de r�
 
 A partir de toutes ces observations on peut conclure que l'obésité est une maladie qui touche le monde entier cependant certains sont plus touchés que d'autres, notamment les pays riches et  les plus développés à quelques exceptions près. En plus de cela, les femmes sont plus touchées que les hommes par cette maladie en général cependant on observe une transition de cette tendance en Europe. Malheureusement **l'obésité peut être décrite comme une fonction croissante par rapport au temps**, c'est-à-dire que le pourcentage de personnes obèses ne fait qu'augmenter.
 
-### B. Employment by activities (ISIC Rev.4)
+###  7.2. <a name='B.EmploymentbyactivitiesISICRev.4-1'></a>B. Employment by activities (ISIC Rev.4)
 
 - #### Analyse spacio-temporelle
 
@@ -767,7 +812,7 @@ A partir de toutes ces observations on peut conclure que l'obésité est une mal
 
 A partir de toutes ces observations on peut conclure qu'entre 2008 et 2018, l'emploi possédait une bonne dynamique car le nombre d'employés ne faisait qu'augmenter dans cet interval. Cependant à partir de 2019 il y a un arrêt de cette dynamique que l'on suppose être la crise sanitaire de la *COVID-19*. Puis les métiers bureautiques commencent peu à peu à devancer les métiers manuels dans certains pays européens.
 
-### C. Comparaison des jeux de données
+###  7.3. <a name='C.Comparaisondesjeuxdedonnes'></a>C. Comparaison des jeux de données
 
 Nos deux jeux de données nous ont appris beaucoup de choses, cependant il serait intéressant de conclure sur notre problématique en faisant des opérations entre  elles.
 
@@ -805,6 +850,6 @@ Malgré le fait que nos jeux de données soient chacunes assez complètes, elles
   
 En combinant nos jeux de données, on a découvert **3 groupes de pays qui présentent des comportements similaires** grâce à la correlation entre l'obésité et l'emploi dans les activités manuelles/bureautiques.
 
-## 3. Conclusion
+##  8. <a name='Conclusion'></a>3. Conclusion
 
 En conclusion on peut dire qu'il existe un lien entre l'obésité et la croissance des emplois en bureaux. Cependant ce lien n'est pas présent pour tous les pays car cela dépendant aussi de leur situation économique, politique <sup>et</sup>/<sub>ou </sub>démographique.
